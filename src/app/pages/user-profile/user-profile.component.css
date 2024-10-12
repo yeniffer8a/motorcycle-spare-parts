@@ -1,0 +1,72 @@
+/* =============================
+- Container-app toda la app app.component.css
+============================= */
+
+main.main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* =============================
+  - User component user.component.css
+  ============================= */
+/* =============================
+  - Navigation bar and images
+  ============================= */
+main.main-container .nav-bar-user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0.5em;
+  margin: 0 0.5em;
+}
+
+main.main-container .nav-bar-user-container .nav-bar-user {
+}
+
+main.main-container .nav-bar-user-container .img-user-container {
+  width: 200px;
+}
+
+main.main-container .nav-bar-user-container .img-user-container .img-user {
+  width: inherit;
+  border-radius: var(--border-radius);
+}
+
+/* =============================
+  - User name
+  ============================= */
+main.main-container .name-user-container {
+  margin-top: 30px;
+  border-radius: var(--border-radius);
+}
+main.main-container .name-user-container h1 {
+  font-family: "Roboto Slab";
+}
+/* =============================
+  - User options
+  ============================= */
+main.main-container .user-option-grid-container {
+  background-color: var(--color-container);
+  border-radius: var(--border-radius);
+}
+main.main-container .user-option-grid-container .user-option-grid-section {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin-top: 30px;
+  text-align: center;
+  align-items: center;
+  padding: 0.5em;
+  border-style: solid;
+}
+main.main-container
+  .user-option-grid-container
+  .user-option-grid-section
+  .user-options {
+  font-family: Roboto;
+  border-radius: var(--border-radius);
+  border-style: inherit;
+  height: 15vh;
+  padding: 2em;
+}
