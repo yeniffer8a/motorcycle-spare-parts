@@ -5,7 +5,7 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { UserPurchaseHistoryComponent } from './components/user-purchase-history/user-purchase-history.component';
 
 export const routes: Routes = [
-    // {path:'',component:UserProfileComponent},
+     {path:'',component:UserProfileComponent},
     {path:'updateUserAddress',component: UpdateUserAddressComponent},
     {path:'updateUser',component:UpdateUserComponent},
     {path:'userPurchaseHistory',component:UserPurchaseHistoryComponent}
