@@ -9,7 +9,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 1240px;
-    margin: 0 auto;
+    margin: 60px auto 0;
   }
   .footer-content-container {
     display: flex;
