@@ -21,54 +21,13 @@
       <!-- feaduted products cards -->
 
       <section class="main-cards">
-        <div class="main-cards-container-2">
-          <div class="main-cards-img-container">
-            <img src="chains.png" alt="chains" />
-          </div>
-          <div class="main-cards-text-container">
-            <h3>Cadenas</h3>
-            <h3>COP 100.000</h3>
-          </div>
-          <div class="main-cards-button-container">
-            <button>Ver más</button>
-          </div>
-        </div>
-        <div class="main-cards-container-2">
-          <div class="main-cards-img-container">
-            <img src="/lubricants2.png" alt="lubricants" />
-          </div>
-          <div class="main-cards-text-container">
-            <h3>Lubricantes</h3>
-            <h3>COP 30.000</h3>
-          </div>
-          <div class="main-cards-button-container">
-            <button>Ver más</button>
-          </div>
-        </div>
-        <div class="main-cards-container-2">
-          <div class="main-cards-img-container">
-            <img src="wheels.avif" alt="wheels" />
-          </div>
-          <div class="main-cards-text-container">
-            <h3>Ruedas</h3>
-            <h3>COP 185.000</h3>
-          </div>
-          <div class="main-cards-button-container">
-            <button>Ver más</button>
-          </div>
-        </div>
-        <div class="main-cards-container-2">
-          <div class="main-cards-img-container">
-            <img src="chains2.jpg" alt="chains" />
-          </div>
-          <div class="main-cards-text-container">
-            <h3>Cadenas</h3>
-            <h3>COP 120.000</h3>
-          </div>
-          <div class="main-cards-button-container">
-            <button>Ver más</button>
-          </div>
-        </div>
+        @for (card of products(); track card._id){
+        <app-cards
+          [name]="card.name"
+          [price]="card.price"
+          [image]="card.image"
+        />
+        }
       </section>
     </section>
   </section>
@@ -80,7 +39,7 @@
     <div class="services_cards-info">
       <h2>Nuestros Servicios</h2>
       <p>
-        En nuestra tienda_______, nos dedicamos a ofrecer productos de alta
+        En nuestra tienda Motozone, nos dedicamos a ofrecer productos de alta
         calidad para mantener tu motocicleta en óptimas condiciones. Contamos
         con una amplia variedad de piezas originales y compatibles para todas
         las marcas y modelos. Nuestro equipo de expertos está siempre disponible
@@ -127,4 +86,55 @@
       </div>
     </div>
   </section>
+
+  <!-- faq -->
+
+  <div class="faq-title">
+    <h2>Preguntas frecuentes</h2>
+    <p>
+      aqui podras encontrar las respuestas a las preguntas mas frecuentes de
+      nuestro sitio
+    </p>
+  </div>
+
+  <div class="flex-up">
+    <div class="faq">
+      <h3>¿Que metodos de pago utilizan?</h3>
+
+      <p>
+        Utilizamos varios métodos de pago electrónicos, incluyendo Nequi,
+        Bancolombia, Davivienda y pagos por PSE, además de transferencias
+        bancarias.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>¿Puedo devolver un repuesto si no es el correcto?</h3>
+
+      <p>
+        Sí, aceptamos devoluciones dentro de los 30 días posteriores a la
+        compra, siempre y cuando el repuesto esté en su empaque original y sin
+        usar.
+      </p>
+    </div>
+  </div>
+  <div class="flex-down">
+    <div class="faq">
+      <h3>¿Hacen envíos a todo el país?</h3>
+
+      <p>
+        Sí, realizamos envíos a todas las regiones del país. Los tiempos de
+        entrega pueden variar según la ubicación.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>¿Ofrecen garantía en los repuestos?</h3>
+
+      <p>
+        todos nuestros repuestos cuentan con una garantía de 2 meses por
+        defectos de fabricación.
+      </p>
+    </div>
+  </div>
 </main>

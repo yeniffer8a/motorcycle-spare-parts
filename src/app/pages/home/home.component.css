@@ -59,7 +59,6 @@
 }
 /* abaut us */
 
-@import url(styles.css);
 
 .service_section {
   background-color: var(--white);
@@ -137,6 +136,71 @@ a {
   margin-top: 40px;
 }
 
+/* faq */
+
+
+.faq-title {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.flex-up {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.flex-down {
+  display: flex;
+  justify-content: center;
+}
+.faq {
+  /* border: 1px solid #dd4a4a; */
+  margin-top: 5px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  width: 500px;
+}
+
+.faq-title h2 {
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #dd4a4a;
+  margin-bottom: 1rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.faq-title p {
+  margin: 20px;
+  margin-left: 100px;
+  width: 300px;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.faq h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dd4a4a;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+.faq p {
+  font-size: 1.1rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.faq {
+  background-color: rgb(244, 236, 236);
+}
+
+
 @media screen and (max-width: 1000px) {
   .main-container {
     display: grid;
@@ -175,4 +239,24 @@ a {
       "B";
     gap: 20px;
   }
+  .faq-title {
+    flex-direction: column;
+    text-align: center;
+  }
+.faq-title p{
+margin-left: auto;
+margin-right: auto;
+}
+.flex-down{
+  flex-direction: column;
+}
+.flex-up{
+  flex-direction: column;
+}
+.faq{
+  width: 400px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
 }
