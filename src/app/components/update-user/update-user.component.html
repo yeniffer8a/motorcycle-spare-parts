@@ -24,11 +24,17 @@
             <label for="email">Email</label>
             <input type="text" id="email" name="email" placeholder="Ad lorem ipsum..." formControlName="email" />
         </div>
-        <!-- Password -->
+        <!-- New Password -->
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">New password</label>
             <input type="text" id="password" name="password" placeholder="Ad lorem ipsum..."
                 formControlName="password" />
+        </div>
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label for="Cpassword">Confirm password</label>
+            <input type="text" id="Cpassword" name="Cpassword" placeholder="Ad lorem ipsum..."
+                formControlName="Cpassword" />
         </div>
         <!--Phone number -->
         <div class="form-group">
@@ -38,8 +44,11 @@
         </div>
         <!-- Picture -->
         <div class="form-group">
-            <label for="avatar">Picture</label>
-            <input id="avatar" name="avatar" formControlName="avatar" (change)="onFileChange($event)" />
+            <label for="image">Picture</label>
+            <input id="image" name="image" formControlName="image" (change)="onFileChange($event)" />
+            <img class="current-image" [src]="'http://localhost:3000/api/avatars/imgUser/'+user()?.image"
+                [alt]="user()?.username">
+            <h6>Imagen actual</h6>
         </div>
         <div class="button-container">
             <button class="buttons" type="submit">

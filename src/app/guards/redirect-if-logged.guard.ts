@@ -1,9 +1,10 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
-export const isLoggedGuard: CanActivateFn = (route, state) => {
+export const redirectIfLoggedGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  if (localStorage.getItem('token')) {
+
+  if (!localStorage.getItem('token')) {
     return true;
   } else {
     router.navigate(['/login']);

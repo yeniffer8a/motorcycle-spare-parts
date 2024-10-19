@@ -16,17 +16,15 @@ export class UserService {
     return this.http.get('http://localhost:3000/api/users', { headers });
   }
   upDateUserForm(formData: any) {
+    //console.log(localStorage.getItem('token'));
     const headers = new HttpHeaders({
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
-    return this.http.patch(
-      'http://localhost:3000/api/users',
-      { headers },
-      formData
-    );
+    console.log(headers.get('Authorization'));
+    return this.http.patch('http://localhost:3000/api/users', formData, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      }),
+    });
   }
-
-  // upDateUser(upDateUserId:string){
-  //   return this.http.patch('http://localhost:3000/api/users/' +upDateUserId, );
-  // }
 }

@@ -2,8 +2,8 @@
     <figure>
         <img src="" alt="" />
         <figcaption>
-            <p></p>
-            <p></p>
+            <p>{{ product.name }}</p>
+            <p>{{ product.price | currency }}</p>
         </figcaption>
     </figure>
     <div class="actions">
@@ -12,7 +12,7 @@
             <button type="button" class="decrement">
                 -
             </button>
-            <input type="number" name="quantity" id="quantity" formControl="productQuantity" />
+            <input type="number" name="quantity" id="quantity" [formControl]="productQuantity" />
             <button type="button" class="increment">
                 +
             </button>

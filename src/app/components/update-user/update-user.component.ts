@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 @Component({
   selector: 'app-update-user',
   standalone: true,
@@ -18,7 +19,7 @@ export class UpdateUserComponent {
   private userService = inject(UserService);
   user = this.userService.user;
   private router = inject(Router);
-  avatar: null | File = null;
+  image: null | File = null;
 
   upDateUserForm = new FormGroup({
     username: new FormControl(this.user()?.username, {
@@ -33,16 +34,17 @@ export class UpdateUserComponent {
     email: new FormControl(this.user()?.email, {
       validators: [Validators.required],
     }),
-    password: new FormControl(this.user()?.password, {
-      validators: [Validators.required],
-    }),
+    password: new FormControl(''),
+    Cpassword: new FormControl(''),
+
     address: new FormControl(this.user()?.address, {
       validators: [Validators.required],
     }),
+
     phoneNumber: new FormControl(this.user()?.phoneNumber, {
       validators: [Validators.required],
     }),
-    image: new FormControl(this.user()?.image),
+    image: new FormControl(null),
   });
 
   // ngOnInit() {
@@ -52,7 +54,7 @@ export class UpdateUserComponent {
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
-      this.avatar = file;
+      this.image = file;
     }
   }
 
@@ -62,24 +64,25 @@ export class UpdateUserComponent {
       if (
         formValue.hasOwnProperty(key) &&
         formValue[key] !== null &&
-        formValue[key] !== undefined
+        formValue[key] !== undefined &&
+        formValue[key] !== ''
       ) {
         formData.append(key, formValue[key]);
       }
     }
-    if (this.avatar) {
-      formData.append('image', this.avatar, this.avatar.name);
+    if (this.image) {
+      formData.append('image', this.image, this.image.name);
     }
     console.log(formData.getAll('image'));
     return formData;
   }
 
   onSubmit() {
-    if (this.upDateUserForm.valid && this.avatar) {
+    if (this.upDateUserForm.valid) {
       const formData = this.toFormData(this.upDateUserForm.value);
       this.userService.upDateUserForm(formData).subscribe({
         next: (response) => {
-          this.router.navigate(['/updateUser']);
+          this.router.navigate(['/user']);
         },
         error: (error) => {
           console.log(error);

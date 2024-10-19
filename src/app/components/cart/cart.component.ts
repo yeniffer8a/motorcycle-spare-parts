@@ -13,7 +13,10 @@ import { RouterLinkWithHref } from '@angular/router';
 })
 export class CartComponent {
   cartService = inject(CartService);
+
+  totalPriceCart = this.cartService.total;
   cartVisibility = this.cartService.cartVisibility;
+  cart = this.cartService.products;
 
   handlerCartVisibility(): void {
     this.cartService.toggleCartVisibility();
