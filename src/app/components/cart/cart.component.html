@@ -1,0 +1,13 @@
+<aside [ngClass]="cartVisibility()? 'cart show' : 'cart' ">
+    <h2>Carrito </h2>
+    <button class="close" (click)="handlerCartVisibility()">Close </button>
+    <section class="cart-products">
+        <app-cart-product />
+    </section>
+    <div class="details">
+        <h3>
+            Total <span></span>
+        </h3>
+        <a routerLink="/checkout" class="checkout">Checkout</a>
+    </div>
+</aside>

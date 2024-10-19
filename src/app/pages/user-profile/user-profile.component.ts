@@ -8,27 +8,29 @@ import { RouterLinkWithHref } from '@angular/router';
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [RouterLinkWithHref,UpdateUserAddressComponent,UpdateUserComponent,UserPurchaseHistoryComponent],
+  imports: [
+    RouterLinkWithHref,
+    UpdateUserAddressComponent,
+    UpdateUserComponent,
+    UserPurchaseHistoryComponent,
+  ],
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.css'
+  styleUrl: './user-profile.component.css',
 })
 export class UserProfileComponent {
-userService = inject(UserService);
+  userService = inject(UserService);
 
-user = this.userService.user
+  user = this.userService.user;
 
-
-ngOnInit(){
-  this.userService.getOneUser().subscribe({
-    next:(response:any)=>{
-      console.log(response);
-      this.userService.user.set(response[0]);
-
-    },
-    error:(error)=>{
-      console.log(error);
-    }
-  })
-}
-
+  ngOnInit() {
+    this.userService.getOneUser().subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.userService.user.set(response);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 }
