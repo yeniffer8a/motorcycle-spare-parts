@@ -1,23 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import {  RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLinkWithHref],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  activarMenu = false;
+  activarMenu = signal(false);
 
   toggleMenu() {
-    this.activarMenu = !this.activarMenu
+    this.activarMenu.set(!this.activarMenu());
   }
   iraSection(section_id: string) {
-    // this.activarMenu = false;
     const section = document.getElementById(section_id);
-    this.activarMenu = !this.activarMenu
+    this.activarMenu.set(!this.activarMenu());
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }

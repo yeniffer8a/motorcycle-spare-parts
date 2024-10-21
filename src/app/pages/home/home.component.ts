@@ -14,6 +14,7 @@ import { product } from '../../../../types/products';
 export class HomeComponent implements OnInit {
   private productsService = inject(ProductsService);
   cards: any = this.productsService.getOneProducts();
+
   products = signal<null | product[]>(null);
 
   ngOnInit(): void {

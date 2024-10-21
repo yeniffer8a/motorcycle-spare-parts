@@ -41,12 +41,14 @@ nav {
   width: 100%;
   background-color: var(--color-red);
   position: absolute;
+
 }
 
 .nav-bar a {
   margin: 10px;
   width: 100%;
   border-bottom: 0.5px solid black;
+  cursor: pointer;
 }
 .nav-bar.ocultar {
   display: none;
