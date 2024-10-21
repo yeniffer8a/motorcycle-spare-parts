@@ -3,16 +3,15 @@
     <img src="logo.png" alt="motozone logo" />
   </div>
   <nav>
-    <div class="nav-bar">
-      <a href="#">Nosotros</a>
+    <div class="nav-bar" [ngClass]="{'ocultar': activarMenu}"> 
+      <!-- <a href="#">Nosotros</a> -->
       <a href="#">Productos</a>
-      <a href="#">Servicios</a>
-      <div class="nav-cta">
-        <a href="#">Contacto</a>
-      </div>
+      <a href="#"(click)="iraSection('Servicios')">Servicios</a>
+
+      <a href="#">Contacto</a>
     </div>
     <div class="nav-menu">
-      <img src="menu.png" alt="hamburguer menu" />
+      <img src="menu.png" alt="hamburguer menu" (click)="toggleMenu()" />
     </div>
   </nav>
 </header>

@@ -39,7 +39,7 @@ a {
   .main-cards-button-container {
     margin: 15px;
   }
-  .main-cards-button-container button {
+  .main-cards-button-container a {
     background-color: #dd4a4a;
     color: white;
     width: 100%;

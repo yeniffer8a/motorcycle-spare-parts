@@ -1,14 +1,13 @@
-<a routerLink="/user"
-  ><div class="main-cards-container-2">
+
+  <div class="main-cards-container-2">
     <div class="main-cards-img-container">
       <img [src]="'http://localhost:3000/products/' + image" alt="" />
     </div>
     <div class="main-cards-text-container">
       <h3>{{ name }}</h3>
-      <h3>COP {{ price }}</h3>
+      <h3> COP {{ price }}</h3>
     </div>
     <div class="main-cards-button-container">
-      <!-- <button (click)="goToDetail('/user')"> Ver Producto</button> -->
+     <a routerLink="/user"> Ver detalles</a>
     </div>
   </div>
-</a>

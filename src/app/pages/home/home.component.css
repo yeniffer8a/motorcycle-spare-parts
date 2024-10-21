@@ -151,6 +151,7 @@ a {
   margin-bottom: 25px;
 }
 .flex-down {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 }
