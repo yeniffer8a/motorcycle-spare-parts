@@ -80,8 +80,10 @@ export class UpdateUserComponent {
   onSubmit() {
     if (this.upDateUserForm.valid) {
       const formData = this.toFormData(this.upDateUserForm.value);
+      console.log('formData-->', formData.getAll('username'));
       this.userService.upDateUserForm(formData).subscribe({
         next: (response) => {
+          console.log('envio--->', response);
           this.router.navigate(['/user']);
         },
         error: (error) => {
