@@ -5,10 +5,12 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { UserPurchaseHistoryComponent } from './components/user-purchase-history/user-purchase-history.component';
 import { importProvidersFrom } from '@angular/core';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 export const routes: Routes = [
-     {path:'',component:HomeComponent},
-    {path:'updateUserAddress',component: UpdateUserAddressComponent},
-    {path:'updateUser',component:UpdateUserComponent},
-    {path:'userPurchaseHistory',component:UserPurchaseHistoryComponent},
-    {path: 'user', component:UserProfileComponent }
-    ];
+  { path: '', component: HomeComponent },
+  { path: 'updateUserAddress', component: UpdateUserAddressComponent },
+  { path: 'updateUser', component: UpdateUserComponent },
+  { path: 'userPurchaseHistory', component: UserPurchaseHistoryComponent },
+  { path: 'user', component: UserProfileComponent },
+  { path: 'productDetail', component: ProductDetailComponent },
+];

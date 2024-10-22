@@ -41,6 +41,9 @@ a {
   text-decoration: none;
   color: var(--color-white);
 }
+span {
+  font-weight: bold;
+}
 
 main {
   max-width: 1240px;
