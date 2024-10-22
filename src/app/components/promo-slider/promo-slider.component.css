@@ -1,0 +1,29 @@
+.promo-slider {
+  margin-bottom: 15px;
+}
+.promo-slider img {
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.promo-slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.promo-slider-controls img {
+  width: 25px;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+.promo-slider-controls img:not(:first-child):not(:nth-child(5)) {
+  width: 15px;
+}
+@media only screen and (max-width: 1000px) {
+  .promo-slider {
+    margin-bottom: 0;
+  }
+  .promo-slider-controls {
+    display: none;
+  }
+}

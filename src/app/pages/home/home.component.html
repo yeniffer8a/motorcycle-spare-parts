@@ -1,0 +1,140 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+<main>
+  <!-- slider -->
+  <app-promo-slider />
+
+  <!-- main cards -->
+  <!-- main img -->
+
+  <section class="main-container">
+    <div class="main-img-container">
+      <img src="main-img.png" alt="main promotion" />
+    </div>
+    <!-- featured products -->
+
+    <section class="main-cards-container">
+      <h2>Productos destacados</h2>
+
+      <!-- feaduted products cards -->
+
+      <section class="main-cards">
+        @for (card of products(); track card._id){
+        <app-cards
+          [name]="card.name"
+          [price]="card.price"
+          [image]="card.image"
+        />
+        }
+      </section>
+    </section>
+  </section>
+
+  <!-- about us  -->
+
+  <section class="service_section" id="Servicios">
+    <article class="services_cards container"></article>
+    <div class="services_cards-info">
+      <h2>Nuestros Servicios</h2>
+      <p>
+        En nuestra tienda Motozone, nos dedicamos a ofrecer productos de alta
+        calidad para mantener tu motocicleta en óptimas condiciones. Contamos
+        con una amplia variedad de piezas originales y compatibles para todas
+        las marcas y modelos. Nuestro equipo de expertos está siempre disponible
+        para asesorarte y ayudarte a encontrar el repuesto perfecto. Nos
+        enorgullece brindar un servicio rápido y eficiente, asegurando que tu
+        moto esté siempre lista para la carretera. Confía en nosotros para todas
+        tus necesidades de repuestos y disfruta de una experiencia de compra sin
+        igual.
+      </p>
+    </div>
+
+    <div class="service-card-container">
+      <div class="service_card">
+        <a href="#">
+          <i class="bi bi-phone"></i>
+          <h3>Preguntas frecuentes</h3>
+          <p>
+            Haz clic aquí para conocer los métodos de pago aceptados,
+            información sobre envíos, cómo rastrear tu pedido, detalles de la
+            garantía de nuestros productos y la calidad de nuestros productos.
+          </p>
+        </a>
+      </div>
+      <div class="service_card">
+        <a href="#">
+          <i class="bi bi-telephone-fill"></i>
+          <h3>Contacto</h3>
+          <p>
+            Para consultas, contáctanos a través de nuestro formulario en línea
+            o llámanos al número de atención al cliente disponible en nuestra
+            web.
+          </p>
+        </a>
+      </div>
+
+      <div class="service_card">
+        <a href="#">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <h3>Inicio de sesion</h3>
+          <p>
+            Haz clic aquí para iniciar sesion o hacer el registro de usuario
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- faq -->
+
+  <div class="faq-title">
+    <h2>Preguntas frecuentes</h2>
+    <p>
+      aqui podras encontrar las respuestas a las preguntas mas frecuentes de
+      nuestro sitio
+    </p>
+  </div>
+
+  <div class="flex-up">
+    <div class="faq">
+      <h3>¿Que metodos de pago utilizan?</h3>
+
+      <p>
+        Utilizamos varios métodos de pago electrónicos, incluyendo Nequi,
+        Bancolombia, Davivienda y pagos por PSE, además de transferencias
+        bancarias.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>¿Puedo devolver un repuesto si no es el correcto?</h3>
+
+      <p>
+        Sí, aceptamos devoluciones dentro de los 30 días posteriores a la
+        compra, siempre y cuando el repuesto esté en su empaque original y sin
+        usar.
+      </p>
+    </div>
+  </div>
+  <div class="flex-down">
+    <div class="faq">
+      <h3>¿Hacen envíos a todo el país?</h3>
+
+      <p>
+        Sí, realizamos envíos a todas las regiones del país. Los tiempos de
+        entrega pueden variar según la ubicación.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h3>¿Ofrecen garantía en los repuestos?</h3>
+
+      <p>
+        todos nuestros repuestos cuentan con una garantía de 2 meses por
+        defectos de fabricación.
+      </p>
+    </div>
+  </div>
+</main>

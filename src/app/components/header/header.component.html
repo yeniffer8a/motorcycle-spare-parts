@@ -1,0 +1,22 @@
+<header>
+  <div class="header-logo">
+    <a routerLink="/"><img src="logo.png" alt="motozone logo" /></a>
+  </div>
+  <nav>
+    <div class="nav-bar" [ngClass]="activarMenu() ? '': 'ocultar'">
+      <!-- <a href="#">Nosotros</a> -->
+      <a routerLink="/user">User</a>
+      <a routerLink="/products">Products</a>
+
+      <a (click)="iraSection('Servicios')">Services</a>
+
+      <a routerLink="#">Contact</a>
+    </div>
+    <div class="nav-menu">
+      <img src="menu.png" alt="hamburguer menu" (click)="toggleMenu()" />
+      <button (click)="handlerCartVisibility()">
+        Cart ({{productsInCart().size}})
+      </button>
+    </div>
+  </nav>
+</header>

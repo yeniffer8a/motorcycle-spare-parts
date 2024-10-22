@@ -7,13 +7,13 @@
         </figcaption>
     </figure>
     <div class="actions">
-        <button>Borrar</button>
+        <button (click)="deleteAllProductInCart(product._id)">Borrar</button>
         <form action="">
-            <button type="button" class="decrement">
+            <button type="button" class="decrement" (click)="decrementProductInCart(product._id)">
                 -
             </button>
             <input type="number" name="quantity" id="quantity" [formControl]="productQuantity" />
-            <button type="button" class="increment">
+            <button type="button" class="increment" (click)="incrementProductInCart(product._id)">
                 +
             </button>
         </form>

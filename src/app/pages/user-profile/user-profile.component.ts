@@ -3,7 +3,8 @@ import { UpdateUserAddressComponent } from '../../components/update-user-address
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 import { UserPurchaseHistoryComponent } from '../../components/user-purchase-history/user-purchase-history.component';
 import { UserService } from '../../services/user.service';
-import { RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -19,8 +20,9 @@ import { RouterLinkWithHref } from '@angular/router';
 })
 export class UserProfileComponent {
   userService = inject(UserService);
-
+  authService = inject(AuthService);
   user = this.userService.user;
+  router = inject(Router);
 
   ngOnInit() {
     this.userService.getOneUser().subscribe({
@@ -32,5 +34,10 @@ export class UserProfileComponent {
         console.log(error);
       },
     });
+  }
+
+  logout() {
+    this.authService.removeToken();
+    this.router.navigate(['/']);
   }
 }
