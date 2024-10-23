@@ -1,67 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<main>
+    <form [formGroup]="upDateUserForm" (submit)="onSubmit()" enctype="multipart/form-data">
+        <!-- User name -->
+        <div class="form-group">
+            <label for="username">User name</label>
+            <input type="text" id="username" name="username" placeholder="Ad lorem ipsum..."
+                formControlName="username" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="general.css"> -->
-    <title>Document</title>
-</head>
+        </div>
+        <!-- First name -->
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Ad lorem ipsum..."
+                formControlName="firstName" />
+        </div>
+        <!-- Last name -->
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Ad lorem ipsum..."
+                formControlName="lastName" />
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Ad lorem ipsum..." formControlName="email" />
+        </div>
+        <!-- New Password -->
+        <div class="form-group">
+            <label for="password">New password</label>
+            <input type="text" id="password" name="password" placeholder="Ad lorem ipsum..."
+                formControlName="password" />
+        </div>
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label for="Cpassword">Confirm password</label>
+            <input type="text" id="Cpassword" name="Cpassword" placeholder="Ad lorem ipsum..."
+                formControlName="Cpassword" />
+        </div>
+        <!--Phone number -->
+        <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Ad lorem ipsum..."
+                formControlName="phoneNumber" />
+        </div>
+        <!-- Picture -->
+        <div class="form-group">
+            <label for="image">Picture</label>
+            <input id="image" name="image" formControlName="image" (change)="onFileChange($event)" />
+            <img class="current-image" [src]="'http://localhost:3000/api/avatars/imgUser/'+user()?.image"
+                [alt]="user()?.username">
+            <h6>Imagen actual</h6>
+        </div>
+        <div class="button-container">
+            <button class="buttons" type="submit">
+                Send
+            </button>
+        </div>
 
-<body>
-    <main>
-        <form>
-            <!-- User name -->
-            <div class="form-group">
-                <label for="userName">User name</label>
-                <input type="text" id="userName" name="userName" placeholder="Ad lorem ipsum..."
-                    formControlName="userName" />
-
-            </div>
-            <!-- First name -->
-            <div class="form-group">
-                <label for="firstName">First name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="Ad lorem ipsum..."
-                    formControlName="firstName" />
-            </div>
-            <!-- Last name -->
-            <div class="form-group">
-                <label for="lastName">Last name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Ad lorem ipsum..."
-                    formControlName="lastName" />
-            </div>
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Ad lorem ipsum..." formControlName="email" />
-            </div>
-            <!-- Password -->
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password" placeholder="Ad lorem ipsum..."
-                    formControlName="password" />
-            </div>
-            <!--Phone number -->
-            <div class="form-group">
-                <label for="phoneNumber">Phone number</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Ad lorem ipsum..."
-                    formControlName="phoneNumber" />
-            </div>
-            <!-- Picture -->
-            <div class="form-group">
-                <label for="avatar">Picture</label>
-                <textarea id="avatar" name="avatar" formControlName="avatar"></textarea>
-            </div>
-            <div class="button-container">
-                <button class="buttons" type="submit">
-                    Send
-                </button>
-            </div>
-
-        </form>
-    </main>
-
-</body>
-
-</html>
+    </form>
+</main>

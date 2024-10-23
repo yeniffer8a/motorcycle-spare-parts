@@ -1,7 +1,6 @@
 <header></header>
 <main class="main-container">
     <div class="nav-bar-user-container">
-        <nav class="nav-bar-user">Barra de navegación para que el usuario navegue entre páginas</nav>
         <div class="img-user-container"><img class="img-user"
                 [src]="'http://localhost:3000/api/avatars/imgUser/'+user()?.image" [alt]="user()?.username">
         </div>
@@ -21,14 +20,11 @@
                     MIS DATOS PERSONALES
                 </a>
             </div>
-
-            <div class="user-options"><a routerLink="{{'/updateUserAddress'}}">AÑADIR DIRECCIÓN DE ENVÍO</a></div>
             <div class="user-options"><a routerLink="{{'/userPurchaseHistory'}}">HISTORIAL DE PEDIDOS</a></div>
-            <div class="user-options">MI CARRITO</div>
         </section>
     </div>
     <div class="button-container">
-        <button class="buttons">Cerrar sesión </button>
+        <button class="buttons" (click)="logout()">Cerrar sesión </button>
     </div>
 </main>
 <footer></footer>

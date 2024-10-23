@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import {  RouterLinkWithHref } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { RouterLinkWithHref } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,12 @@ import {  RouterLinkWithHref } from '@angular/router';
 })
 export class HeaderComponent {
   activarMenu = signal(false);
+  private cartService = inject(CartService);
+  productsInCart = this.cartService.products;
 
+  handlerCartVisibility() {
+    this.cartService.toggleCartVisibility();
+  }
   toggleMenu() {
     this.activarMenu.set(!this.activarMenu());
   }

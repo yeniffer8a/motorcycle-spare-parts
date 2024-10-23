@@ -1,9 +1,9 @@
 <header>
   <div class="header-logo">
-    <img src="logo.png" alt="motozone logo" />
+    <a routerLink="/"><img src="logo.png" alt="motozone logo" /></a>
   </div>
   <nav>
-    <div class="nav-bar" [ngClass]="activarMenu() ? '': 'ocultar'"> 
+    <div class="nav-bar" [ngClass]="activarMenu() ? '': 'ocultar'">
       <!-- <a href="#">Nosotros</a> -->
       <a routerLink="#">Productos</a>
       <a (click)="iraSection('Servicios')">Servicios</a>

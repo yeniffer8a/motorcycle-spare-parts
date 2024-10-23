@@ -3,32 +3,41 @@ import { UpdateUserAddressComponent } from '../../components/update-user-address
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 import { UserPurchaseHistoryComponent } from '../../components/user-purchase-history/user-purchase-history.component';
 import { UserService } from '../../services/user.service';
-import { RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [RouterLinkWithHref,UpdateUserAddressComponent,UpdateUserComponent,UserPurchaseHistoryComponent],
+  imports: [
+    RouterLinkWithHref,
+    UpdateUserAddressComponent,
+    UpdateUserComponent,
+    UserPurchaseHistoryComponent,
+  ],
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.css'
+  styleUrl: './user-profile.component.css',
 })
 export class UserProfileComponent {
-userService = inject(UserService);
+  userService = inject(UserService);
+  authService = inject(AuthService);
+  user = this.userService.user;
+  router = inject(Router);
 
-user = this.userService.user
+  ngOnInit() {
+    this.userService.getOneUser().subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.userService.user.set(response);
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
 
-
-ngOnInit(){
-  this.userService.getOneUser().subscribe({
-    next:(response:any)=>{
-      console.log(response);
-      this.userService.user.set(response[0]);
-
-    },
-    error:(error)=>{
-      console.log(error);
-    }
-  })
-}
-
+  logout() {
+    this.authService.removeToken();
+    this.router.navigate(['/']);
+  }
 }
