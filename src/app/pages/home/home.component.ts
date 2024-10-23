@@ -2,7 +2,7 @@ import { Component, inject, OnInit, Input, signal, input } from '@angular/core';
 import { PromoSliderComponent } from '../../components/promo-slider/promo-slider.component';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { ProductsService } from '../../services/products.service';
-import { product } from '../../../../types/products';
+import { Product } from '../../../../types/Product';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   private productsService = inject(ProductsService);
   cards: any = this.productsService.getOneProducts();
 
-  products = signal<null | product[]>(null);
+  products = signal<null | Product[]>(null);
 
   ngOnInit(): void {
     this.getproducts();

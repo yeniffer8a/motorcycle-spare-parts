@@ -15,6 +15,7 @@ export class HeaderComponent {
   toggleMenu() {
     this.activarMenu.set(!this.activarMenu());
   }
+
   iraSection(section_id: string) {
     const section = document.getElementById(section_id);
     this.activarMenu.set(!this.activarMenu());
@@ -22,4 +23,5 @@ export class HeaderComponent {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  
 }

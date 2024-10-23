@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'updateUser', component: UpdateUserComponent },
   { path: 'userPurchaseHistory', component: UserPurchaseHistoryComponent },
   { path: 'user', component: UserProfileComponent },
-  { path: 'productDetail', component: ProductDetailComponent },
+  { path: 'productDetail/:id', component: ProductDetailComponent },
 ];
