@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
-import { RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,8 @@ import { CartService } from '../../services/cart.service';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  authService = inject(AuthService);
+  router = inject(Router);
   activarMenu = signal(false);
   private cartService = inject(CartService);
   productsInCart = this.cartService.products;
@@ -29,5 +32,10 @@ export class HeaderComponent {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  logout() {
+    this.authService.removeToken();
+    this.router.navigate(['/login']);
+  }
+
   
 }

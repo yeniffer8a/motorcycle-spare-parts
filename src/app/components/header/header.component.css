@@ -34,7 +34,9 @@ nav {
 .nav-menu img {
   width: 35px;
 }
-
+i{
+  width: 100%;
+}
 .nav-bar {
   display: flex;
   padding: 20px;
@@ -44,7 +46,11 @@ nav {
   background-color: var(--color-red);
   /* position: absolute; */
 }
-
+.nav-bar a i {
+  margin: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
 .nav-bar a {
   margin: 10px;
   width: 100%;

@@ -4,11 +4,11 @@ import { UpdateUserAddressComponent } from './components/update-user-address/upd
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { UserPurchaseHistoryComponent } from './components/user-purchase-history/user-purchase-history.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
+// import { LoginComponent } from './pages/login/login.component';
+// import { RegisterComponent } from './pages/register/register.component';
 import { isLoggedGuard } from './guards/is-logged.guard';
 import { redirectIfLoggedGuard } from './guards/redirect-if-logged.guard';
-import { ProductsComponent } from './pages/products/products.component';
+// import { ProductsComponent } from './pages/products/products.component';
 import { importProvidersFrom } from '@angular/core';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
@@ -29,12 +29,12 @@ export const routes: Routes = [
     component: CheckoutComponent,
     canActivate: [isLoggedGuard],
   },
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [redirectIfLoggedGuard],
-  },
-  { path: 'products', component: ProductsComponent },
+  // { path: 'login', component: LoginComponent },
+  // {
+  //   path: 'register',
+  //   component: RegisterComponent,
+  //   canActivate: [redirectIfLoggedGuard],
+  // },
+  // { path: 'products', component: ProductsComponent },
   { path: 'productDetail', component: ProductDetailComponent },
 ];

@@ -20,5 +20,7 @@ export class ProductsService {
   getProductById(id:string){
     return this.http.get('http://localhost:3000/api/products/' + id)
   }
+
+  
 }
 
