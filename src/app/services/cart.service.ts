@@ -25,12 +25,12 @@ export class CartService {
     this.cartVisibility.update((value) => !value);
   }
   addToCart(product: Product) {
-    console.log('signal---->', this.products(), 'ProductInCart--->', product);
+    // console.log('signal---->', this.products(), 'ProductInCart--->', product);
 
     this.products.update((productsMap) => {
-      console.log('Product--1-->', productsMap);
+      // console.log('Product--1-->', productsMap);
       const productInCart = productsMap.get(product._id);
-      console.log('Product--2-->', productInCart);
+      // console.log('Product--2-->', productInCart);
       if (productInCart) {
         productsMap.set(product._id, {
           ...productInCart,
@@ -38,7 +38,7 @@ export class CartService {
         });
       } else {
         productsMap.set(product._id, { ...product, quantity: 1 });
-        console.log(productsMap);
+        // console.log(productsMap);
       }
 
       return new Map(productsMap);
@@ -85,15 +85,13 @@ export class CartService {
     const productsArray = mapToArray.map((product) => {
       return { productId: product._id, quantity: product.quantity };
     });
-
+    console.log(formData, productsArray, this.total());
     return this.http.post(
       'http://localhost:3000/api/orders',
       {
         products: productsArray,
         total: this.total(),
-        dato1: formData.dato1,
-        dato2: formData.dato2,
-        dato3: formData.dato3,
+        shippingAdress: formData.shippingAdress,
         paymentMethod: formData.paymentMethod,
       },
       {

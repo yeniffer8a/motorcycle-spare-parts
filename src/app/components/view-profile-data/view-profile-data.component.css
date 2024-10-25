@@ -5,7 +5,7 @@ main {
   padding: 0 20px;
 }
 
-form {
+section {
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -14,21 +14,28 @@ form {
   align-items: center;
 }
 
-form .form-group {
+section .item-data {
   width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-form .form-group label {
+section .item-data label {
   width: 100%;
   display: inline-block;
 }
 
-form .form-group input {
+section .item-data p {
   width: 100%;
   padding: 8px 10px;
 }
-form .form-group textarea {
+section .form-group textarea {
   width: 100%;
   padding: 8px 10px;
+}
+section .current-image {
+  margin-top: 0.5em;
+  width: 60px;
 }

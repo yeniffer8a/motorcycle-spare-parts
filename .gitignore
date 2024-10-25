@@ -42,12 +42,6 @@ testem.log
 Thumbs.db
 
 #testing components locally
-/src/app/components/header
 /src/app/components/promo-slider
 /src/app/pages/home
-/src/app/pages/login
-/src/app/pages/register
-/src/app/pages/products
-/src/app/services/product.service.ts
-/types/order.model.ts
-/types/product.model.ts
+

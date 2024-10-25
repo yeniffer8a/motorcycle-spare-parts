@@ -1,8 +1,8 @@
 import { Component, inject, OnInit, Input, signal, input } from '@angular/core';
 import { PromoSliderComponent } from '../../components/promo-slider/promo-slider.component';
 import { CardsComponent } from '../../components/cards/cards.component';
-import { ProductsService } from '../../services/products.service';
 import { product } from '../../../../types/products';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -12,16 +12,14 @@ import { product } from '../../../../types/products';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  private productsService = inject(ProductsService);
-  cards: any = this.productsService.getOneProducts();
-
+  private productService = inject(ProductService);
+  cards: any = this.productService.list();
   products = signal<null | product[]>(null);
-
   ngOnInit(): void {
     this.getproducts();
   }
   getproducts() {
-    this.productsService.getOneProducts().subscribe((res: any) => {
+    this.productService.list().subscribe((res: any) => {
       console.log(res);
       const products = [];
       for (let i = 0; i < 4; i++) {

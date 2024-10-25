@@ -3,32 +3,26 @@
         <h2>Detalles del pago</h2>
         <form action="" (submit)="onSubmit()" [formGroup]="paymentDetails">
             <div class="formGroup">
-                <label for="dato1">Dato 1</label>
-                <input type="text" name="dato1" id="dato1" formControlName="dato1" />
+                <label for="shippingAdress">Shipping Address</label>
+                <input type="text" name="shippingAdress" id="shippingAdress" formControlName="shippingAdress" />
             </div>
             <div class="formGroup">
-                <label for="dato2">Dato 2</label>
-                <input type="text" name="dato2" id="dato2" formControlName="dato2" />
-            </div>
-            <div class="formGroup">
-                <label for="dato3">Dato 3</label>
-                <input type="text" name="dato3" id="dato3" formControlName="dato3" />
-            </div>
-            <div class="formGroup">
-                <label for="paymentMethod">Dato 1</label>
+                <label for="paymentMethod">Payment Method</label>
                 <select name="paymentMethod" id="paymentMethod" formControlName="paymentMethod">
-                    <option value="paypal">PayPal</option>
-                    <option value="credit-card">Tarjeta de crédito</option>
+                    <option value="cash">Cash</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="savingAccount">Savings Account</option>
+                    <option value="currentAccount">Current Account</option>
                 </select>
             </div>
-            <button type="submit">Realizar compra</button>
+            <button type="submit">Make Purchase</button>
         </form>
     </section>
     <section class="cart">
-        <h2>Carrito</h2>
+        <h2>Cart</h2>
 
-        <!-- @for(product of products().values(); track product._id) {
-        <cart-product [product]="product" />
-        } -->
+        @for(product of products().values(); track product._id) {
+        <app-cart-product [product]="product" />
+        }
     </section>
 </main>

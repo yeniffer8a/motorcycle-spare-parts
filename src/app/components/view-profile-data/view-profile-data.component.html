@@ -1,0 +1,42 @@
+<main>
+    <section class="user-data"> <!-- User name -->
+        <h3>USER DATA</h3>
+        <div class="item-data">
+            <label for="username">User name</label>
+            <p>{{user()?.username}}</p>
+
+        </div>
+        <!-- First name -->
+        <div class="item-data">
+            <label for="firstName">First name</label>
+            <p>{{user()?.firstName}}</p>
+        </div>
+        <!-- Last name -->
+        <div class="item-data">
+            <label for="lastName">Last name</label>
+            <p>{{user()?.lastName}}</p>
+        </div>
+        <!-- Email -->
+        <div class="item-data">
+            <label for="email">Email</label>
+            <p>{{user()?.email}}</p>
+        </div>
+
+        <!--Phone number -->
+        <div class="item-data">
+            <label for="phoneNumber">Phone number</label>
+            <p>{{user()?.phoneNumber}}</p>
+        </div>
+        <!--address -->
+        <div class="item-data">
+            <label for="phoneNumber">User address</label>
+            <p>{{user()?.address}}</p>
+        </div>
+        <!-- Picture -->
+        <div class="item-data">
+            <label for="image">Picture</label>
+            <img class="current-image" [src]="'http://localhost:3000/api/avatars/imgUser/'+user()?.image"
+                [alt]="user()?.username">
+        </div>
+    </section>
+</main>

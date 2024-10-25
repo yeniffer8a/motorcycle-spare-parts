@@ -1,0 +1,29 @@
+<div class="Login">
+    <form class="formulario" [formGroup]="register" (submit)="onSubmit()" enctype="multipart/form-data">
+        <h2 class="create-account">Crear una cuenta</h2>
+
+        <input type="text" placeholder="User name" formControlName="username" />
+        <input type="text" placeholder="First name" formControlName="firstName" />
+        <input type="text" placeholder="Last name" formControlName="lastName" />
+        <input type="email" placeholder="Email" formControlName="email" />
+        <input type="password" placeholder="Password" formControlName="password" />
+        <input type="password" placeholder="Confirma password" formControlName="confirmPassword" />
+        <input type="text" placeholder="Phone number" formControlName="phoneNumber" />
+        <input type="text" placeholder="Main Address" formControlName="address" />
+        <input type="file" formControlName="image" (change)="onFileChange($event)" />
+        <button type="submit" class="btn btn-primary">Register</button>
+
+        @if(error().length!==0){
+        <small>{{error()}}</small>
+        }
+
+        <div class="iconos">
+            <div class="border-icon">
+                <i class="bx bxl-instagram"></i>
+            </div>
+            <div class="border-icon">
+                <i class="bx bxl-facebook-circle"></i>
+            </div>
+        </div>
+    </form>
+</div>

@@ -20,24 +20,23 @@ export class CheckoutComponent {
   ngOnInit() {
     //this.cartService.toggleCartVisibility();
     const closeCart = this.cartService.cartVisibility;
-    console.log(closeCart());
+    // console.log(closeCart());
     if (closeCart()) {
-      closeCart.set(false);
+      // closeCart.set(false);
     }
   }
 
   paymentDetails = new FormGroup({
-    dato1: new FormControl(''),
-    dato2: new FormControl(''),
-    dato3: new FormControl(''),
+    shippingAdress: new FormControl(''),
     paymentMethod: new FormControl(''),
   });
 
   onSubmit() {
     if (this.products().size >= 1 && this.paymentDetails.valid) {
       this.cartService.createOrder(this.paymentDetails.value).subscribe({
-        next: () => this.router.navigate(['/']),
+        next: () => this.router.navigate(['/user']),
       });
+      console.log(this.paymentDetails);
     }
   }
 }

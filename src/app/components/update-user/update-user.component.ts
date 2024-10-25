@@ -60,7 +60,9 @@ export class UpdateUserComponent {
 
   toFormData(formValue: any) {
     const formData = new FormData();
+
     for (const key in formValue) {
+      console.log(formValue);
       if (
         formValue.hasOwnProperty(key) &&
         formValue[key] !== null &&

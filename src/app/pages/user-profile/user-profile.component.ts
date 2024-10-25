@@ -1,19 +1,20 @@
 import { Component, inject, Input, signal } from '@angular/core';
-import { UpdateUserAddressComponent } from '../../components/update-user-address/update-user-address.component';
+
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 import { UserPurchaseHistoryComponent } from '../../components/user-purchase-history/user-purchase-history.component';
 import { UserService } from '../../services/user.service';
 import { Router, RouterLinkWithHref } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ViewProfileDataComponent } from '../../components/view-profile-data/view-profile-data.component';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
   imports: [
     RouterLinkWithHref,
-    UpdateUserAddressComponent,
     UpdateUserComponent,
     UserPurchaseHistoryComponent,
+    ViewProfileDataComponent,
   ],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
