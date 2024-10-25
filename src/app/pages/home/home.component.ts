@@ -3,6 +3,7 @@ import { PromoSliderComponent } from '../../components/promo-slider/promo-slider
 import { CardsComponent } from '../../components/cards/cards.component';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { Product } from '../../../../types/Product';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
+  cartService = inject(CartService);
   products = signal<null | Product[]>(null);
   private productsService = inject(ProductsService);
   card: any = this.productsService.getOneProducts();
@@ -30,4 +32,8 @@ export class HomeComponent implements OnInit {
       this.products.set(products);
     });
   }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
+
 }

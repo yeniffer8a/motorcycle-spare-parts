@@ -24,7 +24,9 @@
           <p>1</p>
           <button>+</button>
         </div>
-        <button class="addtocart-button"> Añadir al carrito </button>
+        <button class="add-cart" (click)="addToCart(product()!)">
+          Agregar al carrito
+      </button>
       </div>
       Productos extra para complementar tu compra:
       @for (card of products(); track card._id){
@@ -37,7 +39,9 @@
               <h4>COP {{card.price}} </h4>
             </div>
             <div class="extra-buttons">
-              <button>Añadir</button>
+              <button class="add-cart" (click)="addToCart(card!)">
+                Agregar al carrito
+            </button>
               <!-- <button>Cancelar</button> -->
             </div>
           </div>

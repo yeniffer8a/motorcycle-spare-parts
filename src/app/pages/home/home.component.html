@@ -22,12 +22,7 @@
 
       <section class="main-cards">
         @for (card of products(); track card._id){
-        <app-cards
-          [id]="card._id"
-          [name]="card.name"
-          [price]="card.price"
-          [image]="card.image"
-        />
+        <app-cards [product]="card" />
         }
       </section>
     </section>

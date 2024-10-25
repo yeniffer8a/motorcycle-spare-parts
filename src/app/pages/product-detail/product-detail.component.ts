@@ -2,6 +2,7 @@ import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
   products = signal<null | Product[]>(null);
-
+cartService = inject(CartService)
   // @Input() name = '';
   // @Input() price = 0;
   // @Input() image = '';
@@ -58,5 +59,8 @@ export class ProductDetailComponent implements OnInit {
       console.log(products);
       this.products.set(products);
     });
+  }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
 }

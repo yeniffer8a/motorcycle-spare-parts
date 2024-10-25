@@ -1,12 +1,15 @@
 <div class="main-cards-container-2">
   <div class="main-cards-img-container">
-    <img [src]="'http://localhost:3000/imgProducts/' + image" alt="" />
+    <img [src]="'http://localhost:3000/imgProducts/' + product?.image" alt="" />
   </div>
   <div class="main-cards-text-container">
-    <h3>{{ name }}</h3>
-    <h3>COP {{ price }}</h3>
+    <h3>{{ product?.name }}</h3>
+    <h3>COP {{ product?.price }}</h3>
   </div>
   <div class="main-cards-button-container">
-    <a routerLink="/productDetail/{{ id }}">Ver detalles</a>
+    <a routerLink="/productDetail/{{ product?._id }}">Ver detalles</a>
+    <button class="add-cart" (click)="addToCart(product!)">
+      Agregar al carrito
+  </button>
   </div>
 </div>
