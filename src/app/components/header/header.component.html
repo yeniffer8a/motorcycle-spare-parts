@@ -1,7 +1,4 @@
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 <header>
   <div class="header-logo">
     <a routerLink="/"><img src="logo.png" alt="motozone logo" /></a>
@@ -9,12 +6,12 @@
   <nav>
     <div class="nav-bar" [ngClass]="activarMenu() ? '' : 'ocultar'">
       <!-- <a href="#">Nosotros</a> -->
-      <a routerLink="#">Productos</a>
-      <a (click)="iraSection('Servicios')">Servicios</a>
+      <a routerLink="/products">Productos</a>
+      <!-- <a (click)="iraSection('Servicios')">Servicios</a> -->
       <a routerLink="#">Contacto</a>
-      <!-- <a (click)="logout()">Logout</a>
+      <a (click)="logout()">Logout</a>
       <a routerLink="/login">Login</a>
-      <a routerLink="/user">User</a> -->
+      <a routerLink="/user">User</a>
     </div>
     <div class="nav-menu">
       <img src="menu.png" alt="hamburguer menu" (click)="toggleMenu()" />
@@ -22,6 +19,7 @@
     <button (click)="handlerCartVisibility()">
       <i class="bi bi-cart"></i> ({{ productsInCart().size }})
     </button>
+    <h4>{{user()?.firstName}}</h4>
   </nav>
 </header>
 <!-- (click)="handlerCartVisibility()"

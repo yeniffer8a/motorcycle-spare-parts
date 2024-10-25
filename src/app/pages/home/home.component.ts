@@ -1,7 +1,6 @@
 import { Component, inject, OnInit, Input, signal, input } from '@angular/core';
 import { PromoSliderComponent } from '../../components/promo-slider/promo-slider.component';
 import { CardsComponent } from '../../components/cards/cards.component';
-import { ProductService } from '../../services/product.service';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
 
@@ -13,7 +12,6 @@ import { Product } from '../../../../types/Product';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  private productService = inject(ProductService);
   products = signal<null | Product[]>(null);
   private productsService = inject(ProductsService);
   card: any = this.productsService.getOneProducts();
@@ -22,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.getproducts();
   }
   getproducts() {
-    this.productService.list().subscribe((res: any) => {
+    this.productsService.getOneProducts().subscribe((res: any) => {
       console.log(res);
       const products = [];
       for (let i = 0; i < 4; i++) {

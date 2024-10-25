@@ -3,6 +3,7 @@ import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLinkWithHref } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,8 @@ export class HeaderComponent {
   activarMenu = signal(false);
   private cartService = inject(CartService);
   productsInCart = this.cartService.products;
+  private userService = inject(UserService);
+  user = this.userService.user;
 
   handlerCartVisibility() {
     this.cartService.toggleCartVisibility();
@@ -36,6 +39,4 @@ export class HeaderComponent {
     this.authService.removeToken();
     this.router.navigate(['/login']);
   }
-
-  
 }

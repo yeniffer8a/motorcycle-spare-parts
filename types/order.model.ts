@@ -1,5 +1,4 @@
 import { Product } from './product.model';
-import { product } from './products';
 import { User } from './User';
 
 export interface Order {

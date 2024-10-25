@@ -35,8 +35,9 @@ export const routes: Routes = [
     component: RegisterComponent,
     canActivate: [redirectIfLoggedGuard],
   },
+  { path: 'viewProfileData', component: ViewProfileDataComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'productDetail', component: ProductDetailComponent },
+  { path: 'productDetail/:id', component: ProductDetailComponent },
   // { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login', pathMatch: 'full' },
+  //{ path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
