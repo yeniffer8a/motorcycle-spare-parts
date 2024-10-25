@@ -29,13 +29,12 @@
   gap: 10px;
   height: 30px;
 }
-/* .quantity-button {
+.quantity-button {
   display: flex;
-  border: 1px solid black;
   justify-content: center;
   align-items: center;
   gap: 20px;
-} */
+}
 .quantity-button button {
   border: none;
   width: 50px;
@@ -49,6 +48,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+}
+.total{
+  margin-top: 30px;
 }
 .extra-products img {
   width: 100%;

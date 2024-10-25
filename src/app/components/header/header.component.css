@@ -23,6 +23,10 @@ nav {
 /* .nav-bar {
   display: none;
 } */
+ button{
+  background-color:var(--color-red) ;
+  
+ }
 .nav-cta a {
   background-color: var(--color-light-red);
   padding: 10px 20px;

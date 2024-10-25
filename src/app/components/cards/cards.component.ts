@@ -2,11 +2,12 @@ import { Component, inject, OnInit, Input, signal, input } from '@angular/core';
 import { Router, RouterLinkWithHref, RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../../../types/Product';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [RouterLinkWithHref, RouterLink],
+  imports: [RouterLinkWithHref, RouterLink, CurrencyPipe],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css',
 })
