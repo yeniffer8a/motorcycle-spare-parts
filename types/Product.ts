@@ -1,8 +1,8 @@
-export interface product {
-  _id?: string;
+export interface Product {
+  _id?: any;
   cod: string;
   name: string;
-  description: number;
+  description: string;
   price: number;
   brand: string;
   model: string;

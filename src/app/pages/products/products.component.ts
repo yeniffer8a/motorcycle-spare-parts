@@ -6,6 +6,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { UserService } from '../../services/user.service';
 import { CartService } from '../../services/cart.service';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -15,12 +16,12 @@ import { CartService } from '../../services/cart.service';
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
-  productService = inject(ProductService);
+  productsService = inject(ProductsService);
   cartService = inject(CartService);
   products = signal<Product[]>([]);
 
   ngOnInit() {
-    this.productService.list().subscribe({
+    this.productsService.list().subscribe({
       next: (response: any) => {
         this.products.set(response);
         // console.log(this.products());

@@ -1,6 +1,6 @@
 import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { Product } from '../../../../types/product.model';
+//import { Product } from '../../../../types/product.model';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 @Component({

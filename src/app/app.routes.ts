@@ -24,7 +24,6 @@ export const routes: Routes = [
   },
   { path: 'updateUser', component: UpdateUserComponent },
   { path: 'userPurchaseHistory', component: UserPurchaseHistoryComponent },
-  { path: 'viewProfileData', component: ViewProfileDataComponent },
   {
     path: 'checkout',
     component: CheckoutComponent,

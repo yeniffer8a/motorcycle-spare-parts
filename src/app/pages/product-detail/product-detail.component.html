@@ -1,10 +1,10 @@
 <main>
   <section class="product-detail-container">
     <div class="product-detail-img-container">
-      <img src="product-detail/product-example.jpg" alt="Product" />
+      <img [src]="'http://localhost:3000/imgProducts/' + product()?.image" alt="" />
     </div>
     <div class="product-info">
-      <h2>Producto X</h2>
+      <h2>{{ product()?.name }}</h2>
       <div class="rating-container">
         <img src="product-detail/star-1.png" alt="golden star" />
         <img src="product-detail/star-1.png" alt="golden star" />
@@ -15,33 +15,34 @@
           <p>| 17 Reviews</p>
         </div>
       </div>
-      <h4>COP 120.000</h4>
-      <p><span>ID: </span>69873654698746</p>
-      <p><span>Disponibilidad: </span>28 en stock</p>
+      <h4>COP {{ product()?.price }}</h4>
+      <p><span>ID: </span>{{ product()?._id }}</p>
+      <p><span>Disponibilidad: </span>{{ product()?.stock }}</p>
       <div class="product-buttons-container">
         <div class="quantity-button">
           <button>-</button>
           <p>1</p>
           <button>+</button>
         </div>
-        <button class="addtocart-button">Añadir al carrito</button>
+        <button class="addtocart-button"> Añadir al carrito </button>
       </div>
       Productos extra para complementar tu compra:
+      @for (card of products(); track card._id){
       <div class="extra-products">
         <div class="extra-products-cards">
-          <img src="chains2.jpg" alt="extra product 1" />
+          <img [src]="'http://localhost:3000/imgProducts/' + card.image" alt="" />
           <div class="extra-product-cards-content">
             <div class="extra-details">
-              <h4>Producto 1</h4>
-              <h4>COP 80.000</h4>
+              <h4>{{card.name}}</h4>
+              <h4>COP {{card.price}} </h4>
             </div>
             <div class="extra-buttons">
               <button>Añadir</button>
-              <button>Cancelar</button>
+              <!-- <button>Cancelar</button> -->
             </div>
           </div>
         </div>
-        <div class="extra-products-cards">
+        <!-- <div class="extra-products-cards">
           <img src="wheels.avif" alt="extra product 2" />
           <div class="extra-product-cards-content">
             <div class="extra-details">
@@ -49,42 +50,32 @@
               <h4>COP 140.000</h4>
             </div>
             <div class="extra-buttons">
-              <button>Añadir</button>
-              <button>Cancelar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+              <button>Añadir</button> -->
+              <!-- <button>Cancelar</button> -->
+            <!-- </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
+      </div>}
       <div class="total">
-        <p><span>Precio Total: </span>COP 999999</p>
+        <!-- <p><span>Precio Total: </span>COP 999999</p> -->
         <button>Ir al carrito</button>
       </div>
     </div>
     <div class="product-description">
       <h3>Descripción</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere
-        atque laboriosam eius quod quidem nostrum dignissimos nihil distinctio
-        at, et eveniet, sed, repellat necessitatibus voluptatum vero accusantium
-        possimus tempore tempora consequatur alias minus sequi fugit. Esse
-        laudantium cum quos repudiandae, maiores animi reprehenderit ad nam
-        quidem officia impedit quia aut consectetur omnis est veritatis, totam
-        beatae placeat ipsum nostrum aperiam. Quas fugiat possimus culpa
-        praesentium tempore quasi laborum repellat quidem exercitationem quia
-        ipsa, delectus earum beatae, voluptas rem. Animi culpa aperiam molestiae
-        incidunt repellat repudiandae corrupti, autem veritatis quis asperiores
-        non optio, quia voluptatibus totam debitis maxime voluptate nemo?
+        {{ product()?.description }}
       </p>
     </div>
     <div class="specifications">
       <h3>Especificaciones Técnicas</h3>
-      <p><span>Nombre: </span>Nombre del producto</p>
-      <p><span>Precio: </span>COP 0000000.1</p>
-      <p><span>Marca: </span>N/A</p>
-      <p><span>Modelo: </span>Excelente</p>
-      <p><span>Categoría: </span>Repuestos</p>
-      <p><span>Peso: </span> 666kg</p>
-      <p><span>Dimensiones: </span>4x4</p>
+      <p><span>Nombre: </span>{{ product()?.name }}</p>
+      <p><span>Precio: </span>COP {{ product()?.price }}</p>
+      <p><span>Marca: </span>{{ product()?.brand }}</p>
+      <p><span>Modelo: </span>{{product()?.model}}</p>
+      <p><span>Categoría: </span>{{product()?.category}}</p>
+      <!-- <p><span>Peso: </span> </p> -->
+      <p><span>Dimensiones: </span>{{product()?.dimensions}}</p>
     </div>
   </section>
 </main>
