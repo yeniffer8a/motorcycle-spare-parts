@@ -1,33 +1,46 @@
-import { Component, inject, Input, OnInit, signal } from '@angular/core';
+import {
+  Component,
+  inject,
+  Input,
+  OnInit,
+  signal,
+  SimpleChanges,
+} from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css',
 })
 export class ProductDetailComponent implements OnInit {
   products = signal<null | Product[]>(null);
-cartService = inject(CartService)
-  // @Input() name = '';
-  // @Input() price = 0;
-  // @Input() image = '';
-  // @Input() description = '';
-  // @Input() brand = '';
-  // @Input() model = '';
-  // @Input() stock = 0;
-  // @Input() category = '';
-  // @Input() dimensions = '';
+  cartService = inject(CartService);
+
+  @Input() Product: any;
 
   product = signal<null | Product>(null);
+
   id: any;
+
   private productsService = inject(ProductsService);
+
   private route = inject(ActivatedRoute);
+
+  productQuantity = new FormControl(0);
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['product'] && this.Product) {
+      this.productQuantity.setValue(this.Product.quantity);
+    }
+  }
 
   ngOnInit(): void {
     // Obtener el ID del parámetro de la ruta
@@ -38,6 +51,7 @@ cartService = inject(CartService)
     this.getproducts();
     this.getProductById();
   }
+
   getProductById() {
     this.productsService.getProductById(this.id).subscribe({
       next: (product) => {
@@ -49,6 +63,7 @@ cartService = inject(CartService)
       },
     });
   }
+
   getproducts() {
     this.productsService.getOneProducts().subscribe((res: any) => {
       console.log(res);
@@ -60,7 +75,16 @@ cartService = inject(CartService)
       this.products.set(products);
     });
   }
+
   addToCart(product: Product) {
     this.cartService.addToCart(product);
+  }
+
+  decrementProductInCart(productId: string) {
+    this.cartService.decrementProductInCart(productId);
+  }
+
+  incrementProductInCart(productId: string) {
+    this.cartService.incrementProductInCart(productId);
   }
 }

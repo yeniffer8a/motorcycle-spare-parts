@@ -20,9 +20,13 @@
       <p><span>Disponibilidad: </span>{{ product()?.stock }}</p>
       <div class="product-buttons-container">
         <div class="quantity-button">
-          <button>-</button>
-          <p>1</p>
-          <button>+</button>
+          <!-- <button type="button" class="decrement" (click)="decrementProductInCart(product()?._id)">
+            -
+        </button>
+          <input type="number" name="quantity" id="quantity" [formControl]="productQuantity" />
+          <button type="button" class="increment" (click)="incrementProductInCart(product()?._id)">
+            +
+        </button> -->
         </div>
         <button class="add-cart" (click)="addToCart(product()!)">
           Agregar al carrito
