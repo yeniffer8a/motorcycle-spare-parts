@@ -1,4 +1,4 @@
-header {
+header  {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,8 +7,11 @@ header {
   background-color: var(--color-red);
   font-family: var(--font-titles);
   color: var(--color-white);
-  position: sticky;
+  position:sticky;
   top: 0;
+}
+header{
+  z-index: 110;
 }
 /* .header{
   position: relative;
@@ -25,7 +28,9 @@ nav {
 } */
  button{
   background-color:var(--color-red) ;
-  
+  border: none;
+  color: white;
+  margin: 0;
  }
 .nav-cta a {
   background-color: var(--color-light-red);
@@ -59,6 +64,8 @@ i{
   margin: 10px;
   width: 100%;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 

@@ -45,6 +45,6 @@ section.product-list article.product button.add-cart {
   border: none;
   border-radius: 0.2rem;
   padding: 0.4rem 0.8rem;
-  background-color: rgb(39, 71, 255);
+  background-color: var(--color-red);
   color: white;
 }

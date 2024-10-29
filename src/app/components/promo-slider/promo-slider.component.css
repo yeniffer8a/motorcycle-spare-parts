@@ -1,4 +1,4 @@
-.promo-slider {
+/* .promo-slider {
   margin-bottom: 15px;
 }
 .promo-slider img {
@@ -26,4 +26,17 @@
   .promo-slider-controls {
     display: none;
   }
+} */
+
+.carousel-item img {
+  height: 50vh; /* 50% de la altura de la ventana */
+  object-fit: cover; 
+  border-radius: 5px;/* Asegura que la imagen cubra todo el contenedor */
+}
+.carousel-inner img{
+  position: relative;
+  border-radius: 5px;
+}
+.carousel-item{
+  bottom: 20px;
 }
