@@ -31,6 +31,7 @@ nav {
   border: none;
   color: white;
   margin: 0;
+  margin: 15px;
  }
 .nav-cta a {
   background-color: var(--color-light-red);
@@ -81,7 +82,7 @@ i{
     position: absolute;
     top: 75px;
     right: 0;
-    height: 200px;
+    height: 350px;
     border-bottom: none;
     flex-direction: column;
     background-color:var(--color-red);
