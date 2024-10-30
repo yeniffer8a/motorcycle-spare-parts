@@ -56,4 +56,7 @@ export class LoginComponent {
         });
     }
   }
+  isLogged() {
+    return this.userService.isLogged();
+  }
 }

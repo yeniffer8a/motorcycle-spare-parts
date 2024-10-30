@@ -4,12 +4,16 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-body {
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: bisque;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,6 +21,7 @@ body {
 }
 
 .formulario {
+  margin: 1em 0 1em 0;
   width: 400px;
   padding: 1rem;
   margin: 2rem;
@@ -46,12 +51,13 @@ body {
   padding: 1.5rem;
   border: solid thin white;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   transition: all 0.3s ease-in;
 }
 .border-icon:hover {
-  background-color: #050505;
+  background-color: #6d3636;
   cursor: pointer;
+  color: white;
 }
 
 .formulario input {

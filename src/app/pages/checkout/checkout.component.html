@@ -20,7 +20,9 @@
     </section>
     <section class="cart">
         <h2>Cart</h2>
-
+        @if(message().length>0){
+        <small>{{message()}}</small>
+        }
         @for(product of products().values(); track product._id) {
         <app-cart-product [product]="product" />
         }

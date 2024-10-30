@@ -10,7 +10,7 @@
   --color-white: #f2f2f2;
   --color-red: #dd4a4a;
   --color-light-red: #f28989;
-  --border-radius: 10px;
+  --border-radius: 5px;
   --font-titles: "Roboto", serif;
   --font-text: "Roboto Slab", serif;
 }
@@ -61,6 +61,6 @@ div.button-container {
 .buttons {
   margin-top: 30px;
   background-color: var(--color-red);
-  padding: 0.5em;
+  padding: 1rem;
   border-radius: var(--border-radius);
 }

@@ -39,4 +39,7 @@ export class HeaderComponent {
     this.authService.removeToken();
     this.router.navigate(['/login']);
   }
+  isLogged() {
+    return this.userService.isLogged();
+  }
 }

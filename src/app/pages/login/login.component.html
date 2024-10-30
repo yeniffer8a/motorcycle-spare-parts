@@ -1,27 +1,22 @@
 <main>
     <div class="Login">
         <form [formGroup]="login" (submit)="onSubmit()" class="formulario">
-            <h2 class="create-account">Iniciar sesion</h2>
+            <h2 class="create-account">Iniciar sesión</h2>
 
             <input type="email" placeholder="Email" formControlName="email" />
             <input type="password" placeholder="Contraseña" formControlName="password" />
             @if(error().length!==0){
             <small>{{error()}}</small>
             }
-            <div>
-                <button type="submit">Login</button>
-                <button routerLink="/register">Register</button>
-            </div>
-
 
             <div class="iconos">
-                <div class="border-icon">
-                    <i class="bx bxl-instagram"></i>
-                </div>
-                <div class="border-icon">
-                    <i class="bx bxl-facebook-circle"></i>
-                </div>
+
+                <button type="submit" class="border-icon">Login</button>
+
+
+                <button routerLink="/register" class="border-icon">Register</button>
             </div>
+
         </form>
     </div>
 </main>

@@ -69,4 +69,16 @@ main.main-container
   border-style: inherit;
   height: 15vh;
   padding: 2em;
+  color: black;
+}
+main.main-container
+  .user-option-grid-container
+  .user-option-grid-section
+  .user-options
+  a {
+  color: black;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
 }

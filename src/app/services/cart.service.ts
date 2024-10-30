@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 // import { Product } from '../../../types/product.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../../../types/Product'
+import { Product } from '../../../types/Product';
 
 @Injectable({
   providedIn: 'root',
@@ -76,12 +76,13 @@ export class CartService {
       return new Map(productsMap);
     });
   }
-  deleteAllProductIncart(productId: string) {
+  deleteProductInCartById(productId: string) {
     this.products.update((productsMap) => {
       productsMap.delete(productId);
       return new Map(productsMap);
     });
   }
+
   createOrder(formData: any) {
     const mapToArray = Array.from(this.products().values());
     const productsArray = mapToArray.map((product) => {
@@ -103,5 +104,8 @@ export class CartService {
         }),
       }
     );
+  }
+  deleteAllProductInCart() {
+    this.products.set(new Map());
   }
 }

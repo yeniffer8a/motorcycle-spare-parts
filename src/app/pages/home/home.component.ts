@@ -3,6 +3,7 @@ import { PromoSliderComponent } from '../../components/promo-slider/promo-slider
 import { CardsComponent } from '../../components/cards/cards.component';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   products = signal<null | Product[]>(null);
   private productsService = inject(ProductsService);
   card: any = this.productsService.getOneProducts();
+  cartService = inject(CartService);
 
   ngOnInit(): void {
     this.getproducts();

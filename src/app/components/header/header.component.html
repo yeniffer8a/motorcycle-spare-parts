@@ -6,17 +6,18 @@
   <nav>
     <div class="nav-bar" [ngClass]="activarMenu() ? '' : 'ocultar'">
       <!-- <a href="#">Nosotros</a> -->
+      <a *ngIf="isLogged()" routerLink="/user">User</a>
       <a routerLink="/products">Productos</a>
       <!-- <a (click)="iraSection('Servicios')">Servicios</a> -->
       <a routerLink="#">Contacto</a>
-      <a (click)="logout()">Logout</a>
-      <a routerLink="/login">Login</a>
-      <a routerLink="/user">User</a>
+      <a *ngIf="isLogged()" (click)="logout()">Logout</a>
+      <a *ngIf="!isLogged()" routerLink="/login">Login</a>
+
     </div>
     <div class="nav-menu">
       <img src="menu.png" alt="hamburguer menu" (click)="toggleMenu()" />
     </div>
-    <button (click)="handlerCartVisibility()">
+    <button class="button" (click)="handlerCartVisibility()">
       <i class="bi bi-cart"></i> ({{ productsInCart().size }})
     </button>
     <h4>{{user()?.firstName}}</h4>

@@ -30,7 +30,7 @@ export class CartProductComponent {
   incrementProductInCart(productId: string) {
     this.cartService.incrementProductInCart(productId);
   }
-  deleteAllProductInCart(productId: string) {
-    this.cartService.deleteAllProductIncart(productId);
+  deleteProductInCartById(productId: string) {
+    this.cartService.deleteProductInCartById(productId);
   }
 }
