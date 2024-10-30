@@ -116,7 +116,7 @@ CSS
 
 Autores y Agradecimientos
 Daniel - Diseño y estilo de la interfaz de usuario, desarrollo y funcionalidad para consumo de API
-GitHub
+GitHub |[Linkedin] (https://www.linkedin.com/in/daniel-colina-desarrollador-web/)
 
 Julian Balaguera - Diseño y estilo de la interfaz de usuario
 GitHub
