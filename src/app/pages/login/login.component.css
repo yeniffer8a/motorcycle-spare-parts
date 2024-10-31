@@ -9,29 +9,19 @@ main{
   width: 100%;
 }
 main {
-  padding: 50px;
-  height: 100%;
+  margin: 0 auto;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: bisque;
+  background-image: url(https://img2.wallspic.com/previews/4/6/2/9/3/139264/139264-cascos_de_moto-motocicleta-casco_de_la_motocicleta-stunt_artista_interprete_o_ejecutante-las_carreras_de_motos-x750.jpg);
+  /* background-color: bisque;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   color: #fff;
+  background-repeat: no-repeat;
 }
-button {
-  background-color: rgba(255, 0, 0, 0.602);
-  border: none;
-  margin: 10px;
-  padding: 11px;
-  border-radius: 5px;
-  border: 1px solid white;
-  ;
-}
-input{
-  border-radius: 3px;
-}
+
 .formulario {
   width: 400px;
   padding: 1rem;
@@ -99,5 +89,21 @@ input{
 }
 
 ::placeholder {
+  color: #fff;
+}
+button {
+  color: rgba(255, 0, 0, 0.602);
+  border: #fff;
+  border-radius: 5px;
+  padding-inline: 40px;
+  box-shadow: 1px 1px 1px 1px rgba(3, 3, 3, 0.7);
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+button:hover {
+  background-color: rgb(0, 0, 0);
+  transition: 0.8s;
+  cursor: pointer;
   color: #fff;
 }
