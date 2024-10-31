@@ -4,8 +4,13 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+main{
+  width: 100%;
+}
 main {
-  height: 100vh;
+  padding: 50px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +20,18 @@ main {
   background-size: cover;
   color: #fff;
 }
-
+button {
+  background-color: rgba(255, 0, 0, 0.602);
+  border: none;
+  margin: 10px;
+  padding: 11px;
+  border-radius: 5px;
+  border: 1px solid white;
+  ;
+}
+input{
+  border-radius: 3px;
+}
 .formulario {
   width: 400px;
   padding: 1rem;

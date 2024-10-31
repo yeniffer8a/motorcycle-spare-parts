@@ -1,7 +1,10 @@
 <main>
   <section class="product-detail-container">
     <div class="product-detail-img-container">
-      <img [src]="'http://localhost:3000/imgProducts/' + product()?.image" alt="" />
+      <img
+        [src]="'http://localhost:3000/imgProducts/' + product()?.image"
+        alt=""
+      />
     </div>
     <div class="product-info">
       <h2>{{ product()?.name }}</h2>
@@ -30,40 +33,33 @@
         </div>
         <button class="add-cart" (click)="addToCart(product()!)">
           Agregar al carrito
-      </button>
+        </button>
       </div>
-      Productos extra para complementar tu compra:
-      @for (card of products(); track card._id){
+      Productos extra para complementar tu compra: 
       <div class="extra-products">
+        @for (card of products();
+      track card._id){
         <div class="extra-products-cards">
-          <img [src]="'http://localhost:3000/imgProducts/' + card.image" alt="" />
+          <img
+            [src]="'http://localhost:3000/imgProducts/' + card.image"
+            alt=""
+          />
           <div class="extra-product-cards-content">
             <div class="extra-details">
-              <h4>{{card.name}}</h4>
-              <h4>COP {{card.price}} </h4>
+              <h4>{{ card.name }}</h4>
+              <h4>COP {{ card.price }}</h4>
             </div>
             <div class="extra-buttons">
               <button class="add-cart" (click)="addToCart(card!)">
                 Agregar al carrito
-            </button>
+              </button>
               <!-- <button>Cancelar</button> -->
             </div>
           </div>
         </div>
-        <!-- <div class="extra-products-cards">
-          <img src="wheels.avif" alt="extra product 2" />
-          <div class="extra-product-cards-content">
-            <div class="extra-details">
-              <h4>Producto 2</h4>
-              <h4>COP 140.000</h4>
-            </div>
-            <div class="extra-buttons">
-              <button>Añadir</button> -->
-              <!-- <button>Cancelar</button> -->
-            <!-- </div> -->
-          <!-- </div> -->
-        <!-- </div> -->
-      </div>}
+      }
+      </div>
+      
       <div class="total">
         <!-- <p><span>Precio Total: </span>COP 999999</p> -->
         <button>Ir al carrito</button>
@@ -80,10 +76,10 @@
       <p><span>Nombre: </span>{{ product()?.name }}</p>
       <p><span>Precio: </span>COP {{ product()?.price }}</p>
       <p><span>Marca: </span>{{ product()?.brand }}</p>
-      <p><span>Modelo: </span>{{product()?.model}}</p>
-      <p><span>Categoría: </span>{{product()?.category}}</p>
+      <p><span>Modelo: </span>{{ product()?.model }}</p>
+      <p><span>Categoría: </span>{{ product()?.category }}</p>
       <!-- <p><span>Peso: </span> </p> -->
-      <p><span>Dimensiones: </span>{{product()?.dimensions}}</p>
+      <p><span>Dimensiones: </span>{{ product()?.dimensions }}</p>
     </div>
   </section>
 </main>

@@ -1,4 +1,4 @@
-header  {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,10 +7,11 @@ header  {
   background-color: var(--color-red);
   font-family: var(--font-titles);
   color: var(--color-white);
-  position:sticky;
+  position: sticky;
   top: 0;
+  margin-bottom: 0px;
 }
-header{
+header {
   z-index: 110;
 }
 /* .header{
@@ -26,13 +27,13 @@ nav {
 /* .nav-bar {
   display: none;
 } */
- button{
-  background-color:var(--color-red) ;
+button {
+  background-color: var(--color-red);
   border: none;
   color: white;
   margin: 0;
   margin: 15px;
- }
+}
 .nav-cta a {
   background-color: var(--color-light-red);
   padding: 10px 20px;
@@ -44,7 +45,7 @@ nav {
 .nav-menu img {
   width: 35px;
 }
-i{
+i {
   width: 100%;
 }
 .nav-bar {
@@ -69,7 +70,6 @@ i{
   color: white;
 }
 
-
 @media screen and (max-width: 650px) {
   .nav-menu {
     display: block;
@@ -85,9 +85,9 @@ i{
     height: 350px;
     border-bottom: none;
     flex-direction: column;
-    background-color:var(--color-red);
+    background-color: var(--color-red);
   }
   .nav-bar.ocultar {
-  display: none;
-}
+    display: none;
+  }
 }
