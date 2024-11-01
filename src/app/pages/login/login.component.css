@@ -4,10 +4,6 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
-main{
-  width: 100%;
-}
 main {
   margin: 0 auto;
   height: 85vh;

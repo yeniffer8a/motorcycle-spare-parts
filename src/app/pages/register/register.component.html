@@ -10,7 +10,7 @@
         <input type="password" placeholder="Confirma password" formControlName="confirmPassword" />
         <input type="text" placeholder="Phone number" formControlName="phoneNumber" />
         <input type="text" placeholder="Main Address" formControlName="address" />
-        <input type="file" formControlName="image" (change)="onFileChange($event)" />
+        <input  class="selectFile" type="file" formControlName="image" (change)="onFileChange($event)" />
         <button type="submit" class="btn btn-primary">Register</button>
 
         @if(error().length!==0){
