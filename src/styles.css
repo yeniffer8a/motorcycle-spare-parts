@@ -63,4 +63,6 @@ div.button-container {
   background-color: var(--color-red);
   padding: 0.5em;
   border-radius: var(--border-radius);
+  border: none;
+  border: 1px solid black;
 }

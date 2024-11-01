@@ -49,17 +49,23 @@ main.main-container .name-user-container h1 {
 main.main-container .user-option-grid-container {
   background-color: var(--color-container);
   border-radius: var(--border-radius);
+  display: flex;
+  justify-content:center ;
 }
 main.main-container .user-option-grid-container .user-option-grid-section {
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  margin-top: 30px;
+  gap: 10px;
+  grid-template-rows: repeat(auto-fill, minmax( 1fr));
+  margin-top: 10px;
+  width: 500PX;
   text-align: center;
   align-items: center;
+  justify-content: center;
   padding: 0.5em;
   border-style: solid;
+  margin: 0px;
 }
+
 main.main-container
   .user-option-grid-container
   .user-option-grid-section
@@ -69,4 +75,16 @@ main.main-container
   border-style: inherit;
   height: 15vh;
   padding: 2em;
+  margin: 10px;
+}
+main.main-container
+  .user-option-grid-container
+  .user-option-grid-section
+.user-options a {
+  color: black;
+}
+.button-container{
+  margin-bottom: 30px;
+  border: none;
+  
 }
