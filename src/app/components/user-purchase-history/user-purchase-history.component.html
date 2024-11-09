@@ -1,56 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="orden.css"> -->
-    <title>Document</title>
-</head>
-
-<body>
-    <main>
-        <div class="up">
-            <div class="ingredients">
-                <h2>Ship To: </h2>
-                <ul>
-                    <li>Use name: {{user()?.firstName}}</li>
-                    <li>Phone number:{{user()?.phoneNumber}} </li>
-                </ul>
-            </div>
-            <div class="nutrition">
-                <h2>Products</h2>
-                <table>
-                    <colgroup span="4" class="columns"></colgroup>
-                    <tr>
-                        <th>Items</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Unit price</th>
-                        <th>Total</th>
-                    </tr>
-                    <!-- @for (order of orders(); track order._id) {
-                    <tr>
-                        @for (product of order.products; track product)
-                        {<td>{{order}}</td>}
-                        <td>{{order}}</td>
-                        <td>{{order}}</td>
-                        <td>{{order}}</td>
-                        <td>{{order.total}}</td>
-                    </tr>
-                    } -->
-
-                </table>
-                <table>
-                    <tr>
-                        <td><span>Total Purchase: </span></td>
-                        <td>$0</td>
-                    </tr>
-                </table>
-            </div>
+<!-- <main>
+    <div class="up">
+        <div class="ingredients">
+            <h2>Ship To: </h2>
+            <ul>
+                <li>Use name: {{user()?.firstName}}</li>
+                <li>Phone number:{{user()?.phoneNumber}} </li>
+            </ul>
         </div>
-    </main>
-</body>
+        <div class="nutrition">
+            <h2>Products</h2>
+            <table>
+                <colgroup span="4" class="columns"></colgroup>
+                <tr>
+                    <th>Items</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Total</th>
+                </tr>
+                @for (order of orders(); track order._id) {
+                <tr>
 
-</html>
+                    <td>{{order._id}}</td>
+                    <td>{{order.user.firstName}}</td>
+                    <td>{{order.products}}</td>
+                    <td>{{order.products}}</td>
+
+                    <td>{{order.products.name}}</td>
+
+                </tr>
+
+                }
+            </table>
+            <table>
+                <tr>
+                    <td><span>Total Purchase: </span></td>
+                    <td>$0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main> -->
+<!-- <div *ngIf="orders().length > 0; else noOrders">
+  
+    <div *ngFor="let order of orders()">
+        <div class="order-item">
+            <p><strong>Order ID:</strong> {{ order._id }}</p>
+            <p><strong>Shipping Address:</strong> {{ order.shippingAdress }}</p>
+            <p><strong>Total:</strong> {{ order.total }}</p>
+
+         
+            <div *ngFor="let product of order?.products">
+         
+                <p><strong>Product Name:</strong> {{ product.product.name }}</p>
+                <p><strong>Brand:</strong> {{ product.product.brand }}</p>
+                <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+              </div>
+              
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noOrders>
+    <p>No tienes compras recientes.</p>
+</ng-template> -->
+<div *ngFor="let order of orders()">
+    <p><strong>User:</strong> {{ order.user.firstName }} {{ order.user.lastName }}</p>
+
+    <!-- Iterar sobre los productos en cada orden -->
+    <div *ngFor="let productTuple of order.products">
+        @if (productTuple) {
+        <p><strong>Product Name:</strong> {{ productTuple }}</p> <!-- Nombre del producto -->
+        <p><strong>Brand:</strong> {{ productTuple }}</p> <!-- Marca del producto -->
+        <p><strong>Quantity:</strong> {{ productTuple }}</p> <!-- Cantidad del producto -->
+        }@else {
+        No hay datos
+        }
+    </div>
+</div>
+<div *ngIf="loading()">Loading...</div>
+<div *ngIf="error()">{{ error() }}</div>

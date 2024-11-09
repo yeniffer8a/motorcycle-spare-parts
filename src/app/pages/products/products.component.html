@@ -1,5 +1,5 @@
 <main>
-    <section class="hero"></section>
+    <!-- <section class="hero"></section> -->
     <section class="product-list">
         @for(product of products(); track product._id) {
         <article class="product">
@@ -12,9 +12,10 @@
                     </figcaption>
                 </figure>
             </a>
-            <button class="add-cart" (click)="addToCart(product)">
-                Agregar al carrito
-            </button>
+            <div class="button-container"> <button class="buttons" (click)="addToCart(product)">
+                    Agregar al carrito
+                </button></div>
+
         </article>
         }
     </section>

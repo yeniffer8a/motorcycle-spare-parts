@@ -28,7 +28,7 @@ export class UserProfileComponent {
   ngOnInit() {
     this.userService.getOneUser().subscribe({
       next: (response: any) => {
-        console.log(response);
+        // console.log(response);
         this.userService.user.set(response);
       },
       error: (error) => {

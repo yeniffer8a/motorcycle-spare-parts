@@ -31,6 +31,7 @@ h5,
 h6 {
   font-family: var(--font-titles);
   margin-bottom: 15px;
+  color: var(--color-white);
 }
 
 p {
@@ -63,4 +64,12 @@ div.button-container {
   background-color: var(--color-red);
   padding: 1rem;
   border-radius: var(--border-radius);
+  font-family: var(--font-text);
+  cursor: pointer;
+}
+
+section.product-list article.product .buttons:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.45);
+  background-color: var(--color-light-red);
 }

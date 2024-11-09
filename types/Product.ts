@@ -10,4 +10,5 @@ export interface Product {
   dimensions: string;
   stock: number;
   image: string;
+  __v?: number;
 }
