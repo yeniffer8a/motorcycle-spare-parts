@@ -1,0 +1,28 @@
+<!-- src/app/carousel/carousel.component.html -->
+<div class="carousel-container">
+    <!-- Imagen actual -->
+    <div class="carousel-image">
+        @for(product of products(); track product._id; let i= $index ){
+        @if(i===currentIndex){
+        <img [src]="'http://localhost:3000/api/avatars/imgProducts/'+product.image" [alt]="product.name" class="fade" />
+        }
+        }
+    </div>
+
+    <!-- Botones para navegar entre imágenes -->
+    <button class="carousel-button prev" (click)="nextImage()">Anterior</button>
+    <!-- <button><i class="fas fa-arrow-circle-left carousel-button prev" (click)="nextImage()"></i> </button> -->
+    <!-- <i class="fas fa-arrow-circle-left carousel-button prev" (click)="nextImage()"></i> -->
+    <button class="carousel-button next" (click)="prevImage()">Siguiente</button>
+
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+
+        @for(product of products(); track product._id; let i =$index;){
+        <div class="indicator" (click)="selectImage(i)">
+        </div>
+        }
+
+    </div>
+</div>

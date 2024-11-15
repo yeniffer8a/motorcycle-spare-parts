@@ -18,7 +18,7 @@ import { ProductsService } from '../../services/products.service';
 export class ProductsComponent {
   productsService = inject(ProductsService);
   cartService = inject(CartService);
-  products = signal<Product[]>([]);
+  products = this.productsService.products;
 
   ngOnInit() {
     this.productsService.list().subscribe({

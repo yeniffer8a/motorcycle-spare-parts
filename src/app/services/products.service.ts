@@ -1,11 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { Product } from '../../../types/product.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
   private http = inject(HttpClient);
+  products = signal<Product[]>([]);
 
   constructor() {}
 

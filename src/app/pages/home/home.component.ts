@@ -4,20 +4,21 @@ import { CardsComponent } from '../../components/cards/cards.component';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../../../types/Product';
 import { CartService } from '../../services/cart.service';
+import { CarouselComponent } from '../../components/carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PromoSliderComponent, CardsComponent],
+  imports: [CardsComponent, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  products = signal<null | Product[]>(null);
   private productsService = inject(ProductsService);
+  products = this.productsService.products;
   card: any = this.productsService.getOneProducts();
   cartService = inject(CartService);
-
+  error = signal('');
   ngOnInit(): void {
     this.getproducts();
   }

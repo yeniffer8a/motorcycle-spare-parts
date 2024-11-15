@@ -14,9 +14,9 @@
       <a *ngIf="!isLogged()" routerLink="/login">Login</a>
 
     </div>
-    <div class="nav-menu">
+    <!-- <div class="nav-menu">
       <img src="menu.png" alt="hamburguer menu" (click)="toggleMenu()" />
-    </div>
+    </div> -->
     <button class="button" (click)="handlerCartVisibility()">
       <i class="bi bi-cart"></i> ({{ productsInCart().size }})
     </button>

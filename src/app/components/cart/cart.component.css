@@ -55,4 +55,5 @@ aside .details h3 {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  color: black;
 }
