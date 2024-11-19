@@ -1,10 +1,12 @@
-<!-- <main>
+<main>
     <div class="up">
         <div class="ingredients">
             <h2>Ship To: </h2>
             <ul>
+
                 <li>Use name: {{user()?.firstName}}</li>
                 <li>Phone number:{{user()?.phoneNumber}} </li>
+
             </ul>
         </div>
         <div class="nutrition">
@@ -16,31 +18,42 @@
                     <th>Description</th>
                     <th>Quantity</th>
                     <th>Unit price</th>
-                    <th>Total</th>
+
                 </tr>
-                @for (order of orders(); track order._id) {
+
+                @for(product of products(); track product._id ){
                 <tr>
+                    <td>{{product}}</td>
 
-                    <td>{{order._id}}</td>
-                    <td>{{order.user.firstName}}</td>
-                    <td>{{order.products}}</td>
-                    <td>{{order.products}}</td>
 
-                    <td>{{order.products.name}}</td>
+                    <td>{{product.description}}</td>
 
+
+                    <td>{{product.category}}</td>
+
+                    <td>{{product.price}}</td>
                 </tr>
 
                 }
-            </table>
-            <table>
                 <tr>
-                    <td><span>Total Purchase: </span></td>
-                    <td>$0</td>
+                    <td>{{itemName()}}</td>
                 </tr>
+                <!-- <td>{{itemName()}}</td>
+                    <td>{{description()}}</td>
+                    <td>{{quantity()}}</td>
+                    <td>{{unitPrice()}}</td> -->
+                <!-- <th>Total</th>-->
+                <!-- @for (order of orders(); track order._id) {
+                <tr>
+                    <td>{{order.total | currency}}</td>
+                </tr>
+                } -->
+
             </table>
+
         </div>
     </div>
-</main> -->
+</main>
 <!-- <div *ngIf="orders().length > 0; else noOrders">
   
     <div *ngFor="let order of orders()">
@@ -65,19 +78,26 @@
 <ng-template #noOrders>
     <p>No tienes compras recientes.</p>
 </ng-template> -->
-<div *ngFor="let order of orders()">
-    <p><strong>User:</strong> {{ order.user.firstName }} {{ order.user.lastName }}</p>
+<!-- @for(product of products(); track product._id; let i= $index){
+<p><strong>Product name:</strong> {{ product.name}} </p>
+} -->
 
-    <!-- Iterar sobre los productos en cada orden -->
-    <div *ngFor="let productTuple of order.products">
-        @if (productTuple) {
-        <p><strong>Product Name:</strong> {{ productTuple }}</p> <!-- Nombre del producto -->
-        <p><strong>Brand:</strong> {{ productTuple }}</p> <!-- Marca del producto -->
-        <p><strong>Quantity:</strong> {{ productTuple }}</p> <!-- Cantidad del producto -->
-        }@else {
-        No hay datos
-        }
-    </div>
-</div>
-<div *ngIf="loading()">Loading...</div>
-<div *ngIf="error()">{{ error() }}</div>
+<!-- @for(order of orders(); track order._id){
+<p><strong>User:</strong> {{ order.user.firstName }} {{ order.user.lastName }}</p>
+
+@for(product of order.products; track product._id ){
+<p><strong>Product Name:</strong> {{ product.name }}</p>
+@if (product) {
+
+<p><strong>Product Name:</strong> {{ response.orders[0].products[0].product.name }}</p>
+<p><strong>Brand:</strong> {{ product }}</p>
+<p><strong>Quantity:</strong> {{ product }}</p>
+}@else {
+No hay datos
+}
+}
+
+} -->
+
+<!-- <div *ngIf="loading()">Loading...</div> -->
+<!-- <div *ngIf="error()">{{ error() }}</div> -->
