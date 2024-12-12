@@ -10,3 +10,8 @@ export interface Order {
   paymentMethod: string;
   __v: number;
 }
+export interface OrderProduct {
+  product: Product;
+  quantity: number;
+  _id: string;
+}

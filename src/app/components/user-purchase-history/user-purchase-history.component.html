@@ -23,81 +23,53 @@
 
                 @for(product of products(); track product._id ){
                 <tr>
-                    <td>{{product}}</td>
+                    <td>{{product.product.name}}</td>
+                    <td>{{product.product.description}}</td>
+                    <td>{{product.product.price}}</td>
 
-
-                    <td>{{product.description}}</td>
-
-
-                    <td>{{product.category}}</td>
-
-                    <td>{{product.price}}</td>
                 </tr>
 
                 }
                 <tr>
                     <td>{{itemName()}}</td>
                 </tr>
-                <!-- <td>{{itemName()}}</td>
-                    <td>{{description()}}</td>
-                    <td>{{quantity()}}</td>
-                    <td>{{unitPrice()}}</td> -->
-                <!-- <th>Total</th>-->
-                <!-- @for (order of orders(); track order._id) {
-                <tr>
-                    <td>{{order.total | currency}}</td>
-                </tr>
-                } -->
+
 
             </table>
+            <!-- <table>
+                <colgroup span="4" class="columns"></colgroup>
+                <tr>
+                    <th>Items</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Total</th>
+
+                </tr>
+
+                @for(product of products(); track product._id ){
+                <tr>
+                    <td>{{product.product.name}}</td>
+                    <td>{{product.product.description}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.product.price}}</td>
+
+                </tr>
+
+                }
+
+
+
+                @for(order of orders();track order._id){
+                <tr>
+                    <td> {{order.total}}</td>
+                </tr>
+
+
+                }
+
+            </table> -->
 
         </div>
     </div>
 </main>
-<!-- <div *ngIf="orders().length > 0; else noOrders">
-  
-    <div *ngFor="let order of orders()">
-        <div class="order-item">
-            <p><strong>Order ID:</strong> {{ order._id }}</p>
-            <p><strong>Shipping Address:</strong> {{ order.shippingAdress }}</p>
-            <p><strong>Total:</strong> {{ order.total }}</p>
-
-         
-            <div *ngFor="let product of order?.products">
-         
-                <p><strong>Product Name:</strong> {{ product.product.name }}</p>
-                <p><strong>Brand:</strong> {{ product.product.brand }}</p>
-                <p><strong>Quantity:</strong> {{ product.quantity }}</p>
-              </div>
-              
-        </div>
-    </div>
-</div>
-
-
-<ng-template #noOrders>
-    <p>No tienes compras recientes.</p>
-</ng-template> -->
-<!-- @for(product of products(); track product._id; let i= $index){
-<p><strong>Product name:</strong> {{ product.name}} </p>
-} -->
-
-<!-- @for(order of orders(); track order._id){
-<p><strong>User:</strong> {{ order.user.firstName }} {{ order.user.lastName }}</p>
-
-@for(product of order.products; track product._id ){
-<p><strong>Product Name:</strong> {{ product.name }}</p>
-@if (product) {
-
-<p><strong>Product Name:</strong> {{ response.orders[0].products[0].product.name }}</p>
-<p><strong>Brand:</strong> {{ product }}</p>
-<p><strong>Quantity:</strong> {{ product }}</p>
-}@else {
-No hay datos
-}
-}
-
-} -->
-
-<!-- <div *ngIf="loading()">Loading...</div> -->
-<!-- <div *ngIf="error()">{{ error() }}</div> -->

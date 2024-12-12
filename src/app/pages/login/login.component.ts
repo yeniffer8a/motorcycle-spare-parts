@@ -15,12 +15,7 @@ import { catchError, throwError } from 'rxjs';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    ReactiveFormsModule,
-    FooterComponent,
-    RouterLinkWithHref,
-  ],
+  imports: [ReactiveFormsModule, RouterLinkWithHref],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

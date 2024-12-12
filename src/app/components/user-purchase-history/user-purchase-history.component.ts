@@ -3,7 +3,7 @@ import { UserService } from '../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 
 import { OrderService } from '../../services/order.service';
-import { Order } from '../../../../types/order.model';
+import { Order, OrderProduct } from '../../../../types/order.model';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../../types/product.model';
 
@@ -19,7 +19,7 @@ export class UserPurchaseHistoryComponent {
   private http = inject(HttpClient);
   user = this.userService.user;
   orders = signal<Order[]>([]);
-  products = signal<Product[]>([]);
+  products = signal<OrderProduct[]>([]);
   orderService = inject(OrderService);
   loading = signal<boolean>(true);
   error = signal<string | null>(null);
@@ -39,23 +39,23 @@ export class UserPurchaseHistoryComponent {
           //  )
           for (let i = 0; i < this.orders().length; i++) {
             let products = response.orders[i].products;
-            console.log('---------', products);
+            console.log('---------', response.orders[i]);
             this.products.set(products);
             console.log('traditional for products---->', this.products(), i);
 
-            for (let j = 0; j < this.products().length; j++) {
-              //let products = orders[i].products[j];
-              this.itemName.set(products[j].product.name);
-              this.description.set(products[j].product.description);
-              this.quantity.set(products[j].quantity);
-              this.unitPrice.set(products[j].product.price);
+            // for (let j = 0; j < this.products().length; j++) {
+            //   //let products = orders[i].products[j];
+            //   this.itemName.set(products[j].product.name);
+            //   this.description.set(products[j].product.description);
+            //   this.quantity.set(products[j].quantity);
+            //   this.unitPrice.set(products[j].product.price);
 
-              console.log(
-                'traditional for products.quantity---->',
-                this.quantity(),
-                this.unitPrice()
-              );
-            }
+            //   console.log(
+            //     'traditional for products.quantity---->',
+            //     this.quantity(),
+            //     this.unitPrice()
+            //   );
+            // }
           }
           console.log('Despues del for ', this.products());
           // this.orders().forEach((order) => {
