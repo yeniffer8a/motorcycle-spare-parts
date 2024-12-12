@@ -20,9 +20,9 @@ import { catchError, throwError } from 'rxjs';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  private userService = inject(UserService);
-  private router = inject(Router);
-  private authService = inject(AuthService);
+  userService = inject(UserService);
+  router = inject(Router);
+  //private authService = inject(AuthService);
   error = signal('');
 
   login = new FormGroup({
