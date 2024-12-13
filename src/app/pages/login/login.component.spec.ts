@@ -18,6 +18,7 @@ describe('LoginComponent', () => {
   const userEmail = 'test@test.com';
   const userPassword = '#Clave1234';
   const mockFakeToken = { token: 'fake-token' };
+
   beforeEach(async () => {
     const userSpyObj = jasmine.createSpyObj('UserService', [
       'login',

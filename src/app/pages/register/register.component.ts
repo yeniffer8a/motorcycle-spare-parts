@@ -20,7 +20,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 export class RegisterComponent {
   private userService = inject(UserService);
   private router = inject(Router);
-  image: File | null = null;
+  //image: File | null = null;
   error = signal('');
 
   register = new FormGroup({
@@ -48,17 +48,15 @@ export class RegisterComponent {
     address: new FormControl('', {
       validators: [Validators.required],
     }),
-    image: new FormControl(null, {
-      validators: [Validators.required],
-    }),
+    // image: new FormControl(null),
   });
 
-  onFileChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.image = file;
-    }
-  }
+  // onFileChange(event: any) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     this.image = file;
+  //   }
+  // }
 
   toFormData(formValue: any) {
     const formData = new FormData();
@@ -71,10 +69,10 @@ export class RegisterComponent {
         formData.append(key, formValue[key]);
       }
     }
-    if (this.image) {
-      formData.append('image', this.image, this.image.name);
-    }
-    console.log(formData.getAll('image'));
+    // if (this.image) {
+    //   formData.append('image', this.image, this.image.name);
+    // }
+    // console.log(formData.getAll('image'));
     return formData;
   }
   onSubmit() {
@@ -83,15 +81,15 @@ export class RegisterComponent {
       this.error.set('Las contraseñas no coinciden');
       return;
     }
-    if (this.register.valid && this.image) {
+    if (this.register.valid) {
       const formData = this.toFormData(this.register.value);
       this.userService.register(formData).subscribe({
         next: (response) => {
           this.router.navigate(['/login']);
         },
         error: (error) => {
-          console.error('Error durante el registro:', error);
-          this.error.set(error.error);
+          console.error('Error durante el registro:', error.error);
+          this.error.set('Error durante el registro');
         },
       });
     } else {
