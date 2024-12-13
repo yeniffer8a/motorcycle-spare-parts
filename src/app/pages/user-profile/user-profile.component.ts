@@ -10,12 +10,7 @@ import { ViewProfileDataComponent } from '../../components/view-profile-data/vie
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [
-    RouterLinkWithHref,
-    UpdateUserComponent,
-    UserPurchaseHistoryComponent,
-    ViewProfileDataComponent,
-  ],
+  imports: [RouterLinkWithHref],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
 })
@@ -24,7 +19,7 @@ export class UserProfileComponent {
   authService = inject(AuthService);
   user = this.userService.user;
   router = inject(Router);
-
+  error = signal('');
   ngOnInit() {
     this.userService.getOneUser().subscribe({
       next: (response: any) => {
@@ -33,6 +28,7 @@ export class UserProfileComponent {
       },
       error: (error) => {
         console.log(error);
+        this.error.set('Error durante la busqueda');
       },
     });
   }
