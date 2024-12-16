@@ -131,28 +131,28 @@ describe('UserProfileComponent Test', () => {
     expect(component).toBeTruthy(); // Verificar que el componente se haya creado correctamente
   });
 
-  //   it('Should fetch user data on init', () => {
-  //     const userSpy = userServiceSpy.getOneUser.and.returnValue(of(user)); // Espiar la llamada a getOneUser
-  //     component.ngOnInit(); // Llamar al método ngOnInit
-  //     expect(userSpy).toHaveBeenCalled(); // Verificar que se haya llamado a getOneUser
-  //     expect(component.user()).toEqual(user); // Verificar que los datos del usuario sean los esperados
-  //   });
+  // it('Should fetch user data on init', () => {
+  //   const userSpy = userServiceSpy.getOneUser.and.returnValue(of(user)); // Espiar la llamada a getOneUser
+  //   component.ngOnInit(); // Llamar al método ngOnInit
+  //   expect(userSpy).toHaveBeenCalled(); // Verificar que se haya llamado a getOneUser
+  //   expect(component.user()).toEqual(user); // Verificar que los datos del usuario sean los esperados
+  // });
 
-  //   it('Should handle user data fetch error', () => {
-  //     // Simular un error al obtener el usuario
-  //     const userSpy = userServiceSpy.getOneUser.and.returnValue(
-  //       throwError(() => new Error('Error durante la busqueda'))
-  //     );
-  //     component.ngOnInit(); // Llamar a ngOnInit
+  // it('Should handle user data fetch error', () => {
+  //   // Simular un error al obtener el usuario
+  //   const userSpy = userServiceSpy.getOneUser.and.returnValue(
+  //     throwError(() => new Error('Error durante la busqueda'))
+  //   );
+  //   component.ngOnInit(); // Llamar a ngOnInit
 
-  //     expect(userSpy).toHaveBeenCalled();
-  //     expect(component.error()).toBe('Error durante la busqueda');
-  //   });
+  //   expect(userSpy).toHaveBeenCalled();
+  //   expect(component.error()).toBe('Error durante la busqueda');
+  // });
 
-  //   it('Should logout the user and navigate to home', () => {
-  //     const authSpy = authServiceSpy.removeToken.and.returnValue(); // Espiar el método removeToken
-  //     component.logout(); // Llamar al método logout
-  //     expect(authSpy).toHaveBeenCalled(); // Verificar que se haya llamado removeToken
-  //     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']); // Verificar que la navegación haya ocurrido
-  //   });
+  // it('Should logout the user and navigate to home', () => {
+  //   const authSpy = authServiceSpy.removeToken.and.returnValue(); // Espiar el método removeToken
+  //   component.logout(); // Llamar al método logout
+  //   expect(authSpy).toHaveBeenCalled(); // Verificar que se haya llamado removeToken
+  //   expect(routerSpy.navigate).toHaveBeenCalledWith(['/']); // Verificar que la navegación haya ocurrido
+  // });
 });
