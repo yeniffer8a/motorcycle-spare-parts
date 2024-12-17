@@ -86,25 +86,25 @@
 //     expect(deleteSpy).toHaveBeenCalledWith(product._id);
 //   });
 
-//   //   it('should update product quantity when product changes', () => {
-//   //     componente.productQuantity.setValue(2); // Cantidad inicial
-//   //     const newProduct = { ...product, quantity: 3 }; // Nuevo valor
+// //   it('should update product quantity when product changes', () => {
+// //     componente.productQuantity.setValue(2); // Cantidad inicial
+// //     const newProduct = { ...product, quantity: 3 }; // Nuevo valor
 
-//   //     // Creamos un objeto que simule el comportamiento de SimpleChange
-//   //     const simpleChange: any = {
-//   //       previousValue: product,
-//   //       currentValue: newProduct,
-//   //       firstChange: false,
-//   //       isFirstChange: () => false, // Método requerido por SimpleChange
-//   //     };
+// //     // Creamos un objeto que simule el comportamiento de SimpleChange
+// //     const simpleChange: any = {
+// //       previousValue: product,
+// //       currentValue: newProduct,
+// //       firstChange: false,
+// //       isFirstChange: () => false, // Método requerido por SimpleChange
+// //     };
 
-//   //     // Pasamos el objeto simulado al método ngOnChanges
-//   //     componente.ngOnChanges({
-//   //       product: simpleChange,
-//   //     });
-//   //     fixture.detectChanges();
+// //     // Pasamos el objeto simulado al método ngOnChanges
+// //     componente.ngOnChanges({
+// //       product: simpleChange,
+// //     });
+// //     fixture.detectChanges();
 
-//   //     // Verificamos que el valor de productQuantity se haya actualizado correctamente
-//   //     expect(componente.productQuantity.value).toBe(3);
-//   //   });
+// //     // Verificamos que el valor de productQuantity se haya actualizado correctamente
+// //     expect(componente.productQuantity.value).toBe(3);
+// //   });
 // });
