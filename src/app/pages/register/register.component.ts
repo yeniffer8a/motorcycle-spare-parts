@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user-service/user.service';
 import { Router } from '@angular/router';
 import {
   FormControl,

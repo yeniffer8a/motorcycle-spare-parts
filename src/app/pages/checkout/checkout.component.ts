@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart-service/cart.service';
 import { CartProductComponent } from '../../components/cart-product/cart-product.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';

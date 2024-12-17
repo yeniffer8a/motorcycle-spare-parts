@@ -2,9 +2,9 @@ import { Component, inject, Input, signal } from '@angular/core';
 
 import { UpdateUserComponent } from '../../components/update-user/update-user.component';
 import { UserPurchaseHistoryComponent } from '../../components/user-purchase-history/user-purchase-history.component';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user-service/user.service';
 import { Router, RouterLinkWithHref } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth-service/auth.service';
 import { ViewProfileDataComponent } from '../../components/view-profile-data/view-profile-data.component';
 
 @Component({

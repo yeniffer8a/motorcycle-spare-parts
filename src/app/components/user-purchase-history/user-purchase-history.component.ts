@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user-service/user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order } from '../../../../types/order.model';
 import { Product } from '../../../../types/product.model';

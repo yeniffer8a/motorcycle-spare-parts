@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../services/products-service/product.service';
 import { Product } from '../../../../types/product.model';
 import { RouterLinkWithHref } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
-import { UserService } from '../../services/user.service';
-import { CartService } from '../../services/cart.service';
-import { ProductsService } from '../../services/products.service';
+import { UserService } from '../../services/user-service/user.service';
+import { CartService } from '../../services/cart-service/cart.service';
+import { ProductsService } from '../../services/products-service/products.service';
 
 @Component({
   selector: 'app-products',

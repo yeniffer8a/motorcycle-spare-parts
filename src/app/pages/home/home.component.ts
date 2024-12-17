@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, Input, signal, input } from '@angular/core';
 import { PromoSliderComponent } from '../../components/promo-slider/promo-slider.component';
 import { CardsComponent } from '../../components/cards/cards.component';
-import { ProductsService } from '../../services/products.service';
+import { ProductsService } from '../../services/products-service/products.service';
 import { Product } from '../../../../types/Product';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart-service/cart.service';
 
 @Component({
   selector: 'app-home',

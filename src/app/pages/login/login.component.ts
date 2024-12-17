@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { Router, RouterLinkWithHref } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user-service/user.service'
 import {
   FormControl,
   FormGroup,
@@ -9,7 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth-service/auth.service';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
