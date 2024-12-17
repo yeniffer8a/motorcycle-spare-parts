@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service/cart.service';
 @Component({
   selector: 'app-update-user',
   standalone: true,

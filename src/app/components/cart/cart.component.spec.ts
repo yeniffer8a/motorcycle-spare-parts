@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service/cart.service';
 import { CartComponent } from './cart.component';
 import { CartProductComponent } from '../cart-product/cart-product.component';
 import { CommonModule } from '@angular/common';

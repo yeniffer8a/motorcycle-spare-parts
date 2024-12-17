@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-// import { Product } from '../../../types/product.model';
+import { Product } from '../../../../types/product.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../../../types/Product';
+//import { Product } from '../../../types/Product';
 
 @Injectable({
   providedIn: 'root',

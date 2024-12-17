@@ -5,7 +5,7 @@ import { Product } from '../../../../types/product.model';
 import { RouterLinkWithHref } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { UserService } from '../../services/user.service';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service/cart.service';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
