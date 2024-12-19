@@ -1,13 +1,14 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
+import { Product } from '../../../../types/product.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../../../../types/Product';
+//import { Product } from '../../../types/Product';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   constructor() {}
-  products = signal(new Map<string, any>()); // Utilizamos `any` para permitir propiedades adicionales como `quantity`
+  products = signal(new Map());
   cartVisibility = signal(false);
   private http = inject(HttpClient);
 
@@ -25,10 +26,13 @@ export class CartService {
   toggleCartVisibility() {
     this.cartVisibility.update((value) => !value);
   }
-
   addToCart(product: Product) {
+    // console.log('signal---->', this.products(), 'ProductInCart--->', product);
+
     this.products.update((productsMap) => {
+      // console.log('Product--1-->', productsMap);
       const productInCart = productsMap.get(product._id);
+      // console.log('Product--2-->', productInCart);
       if (productInCart) {
         productsMap.set(product._id, {
           ...productInCart,
@@ -36,6 +40,7 @@ export class CartService {
         });
       } else {
         productsMap.set(product._id, { ...product, quantity: 1 });
+        // console.log(productsMap);
       }
 
       return new Map(productsMap);
@@ -57,7 +62,6 @@ export class CartService {
       return new Map(productsMap);
     });
   }
-
   incrementProductInCart(productId: string) {
     this.products.update((productsMap) => {
       const productInCart = productsMap.get(productId);
@@ -72,8 +76,7 @@ export class CartService {
       return new Map(productsMap);
     });
   }
-
-  deleteAllProductIncart(productId: string) {
+  deleteProductInCartById(productId: string) {
     this.products.update((productsMap) => {
       productsMap.delete(productId);
       return new Map(productsMap);
@@ -85,6 +88,7 @@ export class CartService {
     const productsArray = mapToArray.map((product) => {
       return { productId: product._id, quantity: product.quantity };
     });
+    console.log(formData, productsArray, this.total());
     return this.http.post(
       'http://localhost:3000/api/orders',
       {
@@ -100,5 +104,8 @@ export class CartService {
         }),
       }
     );
+  }
+  deleteAllProductInCart() {
+    this.products.set(new Map());
   }
 }

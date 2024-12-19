@@ -35,5 +35,7 @@ export class HomeComponent implements OnInit {
   addToCart(product: Product) {
     this.cartService.addToCart(product);
   }
-
+  trackByFn(index: number, item: Product) {
+    return item?._id ?? index;
+  }
 }

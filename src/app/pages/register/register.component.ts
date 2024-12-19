@@ -48,7 +48,7 @@ export class RegisterComponent {
     address: new FormControl('', {
       validators: [Validators.required],
     }),
-    image: new FormControl(null, {
+    image: new FormControl<File | null>(null, {
       validators: [Validators.required],
     }),
   });
@@ -77,6 +77,7 @@ export class RegisterComponent {
     console.log(formData.getAll('image'));
     return formData;
   }
+
   onSubmit() {
     console.log(this.register.value.confirmPassword);
     if (this.register.value.password !== this.register.value.confirmPassword) {
