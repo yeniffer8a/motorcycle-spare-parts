@@ -48,8 +48,7 @@ export class RegisterComponent {
     address: new FormControl('', {
       validators: [Validators.required],
     }),
-    image: new FormControl<File | null>(null, {
-  
+    image: new FormControl<File | null>(null, {  
     }),
   });
 
