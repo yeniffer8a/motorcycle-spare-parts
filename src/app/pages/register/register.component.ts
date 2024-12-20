@@ -49,7 +49,7 @@ export class RegisterComponent {
       validators: [Validators.required],
     }),
     image: new FormControl<File | null>(null, {
-      validators: [Validators.required],
+  
     }),
   });
 
